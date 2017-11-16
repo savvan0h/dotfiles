@@ -69,3 +69,9 @@ inoremap <expr><C-l>     neocomplete#complete_common_string()
 let g:netrw_nogx = 1
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
+
+" make setting
+nmap <C-b> :make build<CR>
+imap <C-b> <Esc>:w<CR>:make build<CR>
+nmap <C-u> :make run<CR>
+imap <C-u> <Esc>:w<CR>:make run<CR>
