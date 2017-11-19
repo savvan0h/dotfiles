@@ -26,6 +26,11 @@ if dein#check_install()
   call dein#install()
 endif
 
+"""""""""""""""""""
+" General settings
+"""""""""""""""""""
+filetype plugin indent on
+
 set number
 set nobackup
 set noswapfile
@@ -39,18 +44,18 @@ set showcmd
 set cursorline
 "set cursorcolumn
 set smartindent
-set visualbell
+set visualbell t_vb=
 set showmatch
 set laststatus=2
 set hlsearch
+
+au QuickfixCmdPost make,grep,grepadd,vimgrep copen | wincmd p
 
 map <C-g> :Gtags
 map <C-h> :Gtags -f %<CR>
 map <C-j> :GtagsCursor<CR>
 map <C-n> :cn<CR>
 map <C-p> :cp<CR>
-
-au QuickfixCmdPost make,grep,grepadd,vimgrep copen
 
 let NERDTreeShowHidden = 1
 let g:NERDTreeWinSize=38
@@ -75,3 +80,9 @@ nnoremap <F5> :w<CR>:make build<CR>
 inoremap <F5> <Esc>:w<CR>:make build<CR>
 nnoremap <F6> :w<CR>:make run<CR>
 inoremap <F6> <Esc>:w<CR>:make run<CR>
+
+" key mappings for moving between windows
+noremap <Space>j <C-W>j
+noremap <Space>k <C-W>k
+noremap <Space>h <C-W>h
+noremap <Space>l <C-W>l
