@@ -71,7 +71,7 @@ nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
 
 " make setting
-nmap <C-b> :w<CR>:make build<CR>
-imap <C-b> <Esc>:w<CR>:make build<CR>
-nmap <C-u> :w<CR>:make run<CR>
-imap <C-u> <Esc>:w<CR>:make run<CR>
+nnoremap <F5> :w<CR>:make build<CR>
+inoremap <F5> <Esc>:w<CR>:make build<CR>
+nnoremap <F6> :w<CR>:make run<CR>
+inoremap <F6> <Esc>:w<CR>:make run<CR>
