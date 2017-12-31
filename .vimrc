@@ -46,34 +46,40 @@ set cursorline
 set smartindent
 set visualbell t_vb=
 set showmatch
+set so=5
+" start searching when you type the first character of the search string
+set incsearch
+
+" reload file when switching buffer or focusing vim again
+set autoread
+
+" always show status line
 set laststatus=2
+" full path to the file in the buffer.
+set statusline=%F
+" filetype
+set statusline+=%y
+" modified flag, text is "[+]"; "[-]" if 'modifiable' is off.  
+set statusline+=%m
+" readonly flag, text is "[RO]".
+set statusline+=%r
+" help buffer flag, text is "[help]".
+set statusline+=%h
+" preview window flag, text is "[Preview]".
+set statusline+=%w
+" switch to the right side
+set statusline+=%=
+" file encoding
+set statusline+=[ENC=%{&fileencoding}]
+" current line/total lines
+set statusline+=[LOW=%l/%L]
+
 set hlsearch
 
 au QuickfixCmdPost make,grep,grepadd,vimgrep copen | wincmd p
 
-map <C-g> :Gtags
-map <C-h> :Gtags -f %<CR>
-map <C-j> :GtagsCursor<CR>
-map <C-n> :cn<CR>
-map <C-p> :cp<CR>
-
-let NERDTreeShowHidden = 1
-let g:NERDTreeWinSize=38
-nnoremap <silent><C-e> :NERDTreeToggle<CR>
-"autocmd VimEnter * execute 'NERDTree'
-
-let g:winresizer_start_key = '<C-T>'
-
 syntax on
 let mapleader = ","
-
-" neocomplete
-inoremap <expr><C-l>     neocomplete#complete_common_string()
-
-" open-browser
-let g:netrw_nogx = 1
-nmap gx <Plug>(openbrowser-smart-search)
-vmap gx <Plug>(openbrowser-smart-search)
 
 " make setting
 nnoremap <F5> :w<CR>:make build<CR>
@@ -86,3 +92,34 @@ noremap <Space>j <C-W>j
 noremap <Space>k <C-W>k
 noremap <Space>h <C-W>h
 noremap <Space>l <C-W>l
+
+" yank to clipboard
+nnoremap <Leader>y "*y
+vnoremap <Leader>y "*y
+
+"""""""""""""""""""
+" Plugin settings
+"""""""""""""""""""
+
+"Gtags
+map <C-g> :Gtags
+map <C-h> :Gtags -f %<CR>
+map <C-j> :GtagsCursor<CR>
+map <C-n> :cn<CR>
+map <C-p> :cp<CR>
+
+"NERDTree
+let NERDTreeShowHidden = 1
+let g:NERDTreeWinSize=38
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
+"autocmd VimEnter * execute 'NERDTree'
+
+let g:winresizer_start_key = '<C-T>'
+
+" neocomplete
+inoremap <expr><C-l>     neocomplete#complete_common_string()
+
+" open-browser
+let g:netrw_nogx = 1
+nmap gx <Plug>(openbrowser-smart-search)
+vmap gx <Plug>(openbrowser-smart-search)
