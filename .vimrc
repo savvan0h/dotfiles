@@ -35,8 +35,8 @@ set number
 set nobackup
 set noswapfile
 set noundofile
+set fileencodings=iso-2022-jp-3,iso-2022-jp,euc-jisx0213,euc-jp,utf-8,ucs-bom,euc-jp,eucjp-ms,cp932
 set encoding=utf-8
-set fileencodings=cp932
 set fileformats=unix,dos,mac
 "set guifont=Migu_1M:h12
 set autoread
@@ -97,6 +97,9 @@ noremap <Space>l <C-W>l
 nnoremap <Leader>y "*y
 vnoremap <Leader>y "*y
 
+hi ColorColumn ctermbg=235 guibg=#2c2d27
+autocmd BufRead,BufNewFile *.ecb setfiletype cobol
+autocmd FileType cobol execute "set colorcolumn=" . join(range(81, 9999), ',')
 """""""""""""""""""
 " Plugin settings
 """""""""""""""""""
@@ -123,3 +126,47 @@ inoremap <expr><C-l>     neocomplete#complete_common_string()
 let g:netrw_nogx = 1
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
+
+" buftabs
+" show only file names
+let buftabs_only_basename = 1
+" show in the status bar
+let buftabs_in_statusline = 1
+
+noremap <f1> :bprev<CR>
+noremap <f2> :bnext<CR>
+""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""
+" change status line's color when switching command and insert mode
+""""""""""""""""""""""""""""""
+let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
+
+if has('syntax')
+  augroup InsertHook
+    autocmd!
+    autocmd InsertEnter * call s:StatusLine('Enter')
+    autocmd InsertLeave * call s:StatusLine('Leave')
+  augroup END
+endif
+
+let s:slhlcmd = ''
+function! s:StatusLine(mode)
+  if a:mode == 'Enter'
+    silent! let s:slhlcmd = 'highlight ' . s:GetHighlight('StatusLine')
+    silent exec g:hi_insert
+  else
+    highlight clear StatusLine
+    silent exec s:slhlcmd
+  endif
+endfunction
+
+function! s:GetHighlight(hi)
+  redir => hl
+  exec 'highlight '.a:hi
+  redir END
+  let hl = substitute(hl, '[\r\n]', '', 'g')
+  let hl = substitute(hl, 'xxx', '', '')
+  return hl
+endfunction
+""""""""""""""""""""""""""""""
