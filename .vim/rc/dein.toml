@@ -21,3 +21,6 @@ repo = 'bronson/vim-trailing-whitespace'
 
 [[plugins]]
 repo = 'vim-scripts/buftabs'
+
+[[plugins]]
+repo = 'thinca/vim-visualstar'

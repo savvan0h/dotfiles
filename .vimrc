@@ -94,12 +94,18 @@ noremap <Space>h <C-W>h
 noremap <Space>l <C-W>l
 
 " yank to clipboard
+set clipboard=unnamed,autoselect
+
 nnoremap <Leader>y "*y
 vnoremap <Leader>y "*y
 
 hi ColorColumn ctermbg=235 guibg=#2c2d27
-autocmd BufRead,BufNewFile *.ecb setfiletype cobol
-autocmd FileType cobol execute "set colorcolumn=" . join(range(81, 9999), ',')
+augroup cobolSettings
+	autocmd!
+        autocmd BufRead,BufNewFile *.ecb setfiletype cobol
+        autocmd FileType cobol execute "set colorcolumn=" . join(range(81, 9999), ',')
+        autocmd FileType cobol setlocal foldmethod=indent foldlevel=2 foldcolumn=3
+augroup END
 """""""""""""""""""
 " Plugin settings
 """""""""""""""""""
