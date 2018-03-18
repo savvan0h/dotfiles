@@ -39,6 +39,7 @@ set fileencodings=iso-2022-jp-3,iso-2022-jp,euc-jisx0213,euc-jp,utf-8,ucs-bom,eu
 set encoding=utf-8
 set fileformats=unix,dos,mac
 "set guifont=Migu_1M:h12
+set guifont=Ricty\ Diminished:h12
 set autoread
 set showcmd
 set cursorline
@@ -103,9 +104,26 @@ hi ColorColumn ctermbg=235 guibg=#2c2d27
 augroup cobolSettings
 	autocmd!
         autocmd BufRead,BufNewFile *.ecb setfiletype cobol
+        autocmd BufRead,BufNewFile *.lst setfiletype cobol
         autocmd FileType cobol execute "set colorcolumn=" . join(range(81, 9999), ',')
-        autocmd FileType cobol setlocal foldmethod=indent foldlevel=2 foldcolumn=3
+        autocmd FileType cobol setlocal foldmethod=expr foldexpr=CBLFoldSetting(v:lnum) foldcolumn=3
 augroup END
+
+function! CBLFoldSetting(lnum)
+  let l:line = getline(a:lnum)
+  if l:line =~ '^.*SECTION\.'
+    return '>1'
+  elseif getline(a:lnum) =~ '^.*EXIT\.'
+    return '<1'
+  elseif getline(a:lnum - 1) =~ '^.*EXIT\.'
+    return 0
+  else
+    return '='
+  endif
+endfunction
+
+colorscheme evening
+
 """""""""""""""""""
 " Plugin settings
 """""""""""""""""""
