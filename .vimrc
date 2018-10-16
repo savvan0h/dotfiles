@@ -26,6 +26,17 @@ if dein#check_install()
   call dein#install()
 endif
 
+" deoplete setting
+call dein#add('Shougo/deoplete.nvim')
+call dein#add('Shougo/neco-vim')
+call dein#add('Shougo/neco-syntax')
+call dein#add('ujihisa/neco-look')
+if !has('nvim')
+  call dein#add('roxma/nvim-yarp')
+  call dein#add('roxma/vim-hug-neovim-rpc')
+endif
+let g:deoplete#enable_at_startup = 1
+
 """""""""""""""""""
 " General settings
 """""""""""""""""""
@@ -105,8 +116,9 @@ augroup cobolSettings
 	autocmd!
         autocmd BufRead,BufNewFile *.ecb setfiletype cobol
         autocmd BufRead,BufNewFile *.lst setfiletype cobol
-        autocmd FileType cobol execute "set colorcolumn=" . join(range(81, 9999), ',')
-        autocmd FileType cobol setlocal foldmethod=expr foldexpr=CBLFoldSetting(v:lnum) foldcolumn=3
+        autocmd FileType cobol execute "setlocal colorcolumn=" . join(range(73, 9999), ',')
+        autocmd FileType cobol setlocal sw=2 foldmethod=expr foldexpr=CBLFoldSetting(v:lnum) foldcolumn=3 foldlevel=1
+	"autocmd FileType cobol set sw=2 sts=4 et sta tw=72
 augroup END
 
 function! CBLFoldSetting(lnum)
@@ -122,7 +134,9 @@ function! CBLFoldSetting(lnum)
   endif
 endfunction
 
-colorscheme evening
+colorscheme default
+
+inoremap <silent> jj <ESC>
 
 """""""""""""""""""
 " Plugin settings
@@ -143,9 +157,6 @@ nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
 let g:winresizer_start_key = '<C-T>'
 
-" neocomplete
-inoremap <expr><C-l>     neocomplete#complete_common_string()
-
 " open-browser
 let g:netrw_nogx = 1
 nmap gx <Plug>(openbrowser-smart-search)
@@ -159,6 +170,12 @@ let buftabs_in_statusline = 1
 
 noremap <f1> :bprev<CR>
 noremap <f2> :bnext<CR>
+
+" rubocop
+" if syntastic_mode_map is active, syntastic runs when saving buffer
+" specify target filetype as active_filetypes
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
+let g:syntastic_ruby_checkers = ['rubocop']
 """"""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
@@ -194,3 +211,48 @@ function! s:GetHighlight(hi)
   return hl
 endfunction
 """"""""""""""""""""""""""""""
+
+"nnoremap <F7> :call PRECOMP()<CR>
+nnoremap <F8> :call CBLCOMP()<CR>
+
+"function! PRECOMP()
+"  let s:currentdir=expand('%:p:h')
+"
+"  let s:makedir=expand('%:p:h:h')
+"  let s:makedir.='/make/'
+"  exe ':cd '.s:makedir
+"
+"  let &makeprg='make clean -f '
+"  let &makeprg.=expand('%:t:r')
+"  let &makeprg.='_P.mak'
+"  exec ':make'
+"
+"  let &makeprg='make -f '
+"  let &makeprg.=expand('%:t:r')
+"  let &makeprg.='_P.mak'
+"  exec ':make'
+"
+"  exec ':cd '.s:currentdir
+"endfunction
+
+function! CBLCOMP()
+" let s:currentdir=expand('%:p:h')
+
+" let s:makedir=expand('%:p:h:h')
+" let s:makedir.='/make/'
+" exe ':cd '.s:makedir
+
+" let &makeprg='make clean -f '
+" let &makeprg.=expand('%:t:r')
+" let &makeprg.='_C.mak'
+" exec ':make'
+
+  let &makeprg='make -f '
+  let &makeprg.=expand('%:p:h:h')
+  let &makeprg.='/make/'
+  let &makeprg.=expand('%:t:r')
+  let &makeprg.='.mak'
+  exec ':make'
+
+"  exec ':cd '.s:currentdir
+endfunction

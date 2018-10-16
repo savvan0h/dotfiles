@@ -8,7 +8,19 @@ repo = 'simeji/winresizer'
 repo = 'wesQ3/vim-windowswap'
 
 [[plugins]]
-repo = 'Shougo/neocomplete.vim'
+repo = 'scrooloose/syntastic'
+
+[[plugins]]
+repo = 'thinca/vim-ref'
+
+[[plugins]]
+repo = 'yuku-t/vim-ref-ri'
+
+[[plugins]]
+repo = 'szw/vim-tags'
+
+[[plugins]]
+repo = 'tpope/vim-endwise'
 
 [[plugins]]
 repo = 'tyru/open-browser.vim'
@@ -24,3 +36,6 @@ repo = 'vim-scripts/buftabs'
 
 [[plugins]]
 repo = 'thinca/vim-visualstar'
+
+[[plugins]]
+repo = 'vim-scripts/DrawIt'
