@@ -18,6 +18,18 @@ if dein#load_state(s:dein_dir)
   call dein#load_toml(s:toml,      {'lazy': 0})
   "call dein#load_toml(s:lazy_toml, {'lazy': 1})
 
+  " deoplete setting
+  call dein#add('Shougo/deoplete.nvim')
+  call dein#add('Shougo/neco-vim')
+  call dein#add('Shougo/neco-syntax')
+  call dein#add('ujihisa/neco-look')
+  if has('nvim')
+    call dein#add('uplus/deoplete-solargraph')
+  else
+    call dein#add('roxma/nvim-yarp')
+    call dein#add('roxma/vim-hug-neovim-rpc')
+  endif
+
   call dein#end()
   call dein#save_state()
 endif
@@ -26,21 +38,16 @@ if dein#check_install()
   call dein#install()
 endif
 
-" deoplete setting
-call dein#add('Shougo/deoplete.nvim')
-call dein#add('Shougo/neco-vim')
-call dein#add('Shougo/neco-syntax')
-call dein#add('ujihisa/neco-look')
-if !has('nvim')
-  call dein#add('roxma/nvim-yarp')
-  call dein#add('roxma/vim-hug-neovim-rpc')
-endif
-let g:deoplete#enable_at_startup = 1
+"let g:python3_host_prog='/usr/local/bin/python3'
 
 """""""""""""""""""
 " General settings
 """""""""""""""""""
 filetype plugin indent on
+
+set expandtab
+set tabstop=2
+set shiftwidth=2
 
 set number
 set nobackup
@@ -106,7 +113,11 @@ noremap <Space>h <C-W>h
 noremap <Space>l <C-W>l
 
 " yank to clipboard
-set clipboard=unnamed,autoselect
+if has('nvim')
+  set clipboard+=unnamedplus
+else
+  set clipboard=unnamed,autoselect
+endif
 
 nnoremap <Leader>y "*y
 vnoremap <Leader>y "*y
@@ -176,6 +187,14 @@ noremap <f2> :bnext<CR>
 " specify target filetype as active_filetypes
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
 let g:syntastic_ruby_checkers = ['rubocop']
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#auto_complete_delay = 1
+let g:deoplete#auto_complete_start_length = 1
+set completeopt+=noinsert
+set completeopt-=preview
+
 """"""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
