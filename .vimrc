@@ -38,8 +38,6 @@ if dein#check_install()
   call dein#install()
 endif
 
-"let g:python3_host_prog='/usr/local/bin/python3'
-
 """""""""""""""""""
 " General settings
 """""""""""""""""""
@@ -189,9 +187,11 @@ let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
 let g:syntastic_ruby_checkers = ['rubocop']
 
 " deoplete
+let g:python3_host_prog='/usr/local/bin/python3'
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#auto_complete_delay = 1
 let g:deoplete#auto_complete_start_length = 1
+
 set completeopt+=noinsert
 set completeopt-=preview
 
