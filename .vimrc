@@ -212,15 +212,15 @@ let g:previm_open_cmd = 'open -a "Google Chrome"'
 call neomake#config#set('ft.python.pylama.exe', 'pylava')
 " Full config: when writing or reading a buffer, and on changes in insert and
 " normal mode (after 1s; no delay when writing).
-call neomake#configure#automake('nrwi', 500)
+call neomake#configure#automake('nrwi', 100)
 let g:neomake_open_list = 2
 let g:neomake_python_enabled_makers = ['pylama']
 let g:neomake_python_pylama_maker = {
-        \ 'args': ['--format', 'parsable'],
+        \ 'args': ['--format', 'parsable', '-l', 'pycodestyle,pydocstyle,pyflakes,mccabe'],
         \ 'errorformat': '%f:%l:%c: [%t] %m',
         \ 'postprocess': function('neomake#makers#ft#python#PylamaEntryProcess'),
         \ 'output_stream': 'stdout',
-        \ 'exe': '/Users/hiroki_sawano/miniconda3/envs/ppi-rdb/bin/pylava'
+        \ 'exe': '/usr/local/bin/pylava'
         \ }
 
 """"""""""""""""""""""""""""""
@@ -229,6 +229,9 @@ let g:neomake_python_pylama_maker = {
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
+
+" vim-gitgutter
+set updatetime=250
 
 """"""""""""""""""""""""""""""
 " change status line's color when switching command and insert mode
