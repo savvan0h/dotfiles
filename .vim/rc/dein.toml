@@ -39,3 +39,21 @@ repo = 'thinca/vim-visualstar'
 
 [[plugins]]
 repo = 'vim-scripts/DrawIt'
+
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
+
+[[plugins]]
+repo = 'kannokanno/previm'
+
+[[plugins]]
+repo = 'neomake/neomake'
+
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
+repo = "tpope/vim-fugitive"

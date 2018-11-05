@@ -18,6 +18,8 @@ if dein#load_state(s:dein_dir)
   call dein#load_toml(s:toml,      {'lazy': 0})
   "call dein#load_toml(s:lazy_toml, {'lazy': 1})
 
+  " gruvbox
+  call dein#add('morhetz/gruvbox')
   " deoplete setting
   call dein#add('Shougo/deoplete.nvim')
   call dein#add('Shougo/neco-vim')
@@ -25,6 +27,7 @@ if dein#load_state(s:dein_dir)
   call dein#add('ujihisa/neco-look')
   if has('nvim')
     call dein#add('uplus/deoplete-solargraph')
+    call dein#add('zchee/deoplete-jedi')
   else
     call dein#add('roxma/nvim-yarp')
     call dein#add('roxma/vim-hug-neovim-rpc')
@@ -143,7 +146,13 @@ function! CBLFoldSetting(lnum)
   endif
 endfunction
 
-colorscheme default
+" === gruvbox ===
+colorscheme gruvbox
+
+set background=dark
+set t_Co=256
+let g:ligthline = { 'colorscheme': 'gruvbox' }
+" === gruvbox ===
 
 inoremap <silent> jj <ESC>
 
@@ -195,7 +204,31 @@ let g:deoplete#auto_complete_start_length = 1
 set completeopt+=noinsert
 set completeopt-=preview
 
+" markdown preview
+au BufRead,BufNewFile *.md set filetype=markdown
+let g:previm_open_cmd = 'open -a "Google Chrome"'
+
+" neomake
+call neomake#config#set('ft.python.pylama.exe', 'pylava')
+" Full config: when writing or reading a buffer, and on changes in insert and
+" normal mode (after 1s; no delay when writing).
+call neomake#configure#automake('nrwi', 500)
+let g:neomake_open_list = 2
+let g:neomake_python_enabled_makers = ['pylama']
+let g:neomake_python_pylama_maker = {
+        \ 'args': ['--format', 'parsable'],
+        \ 'errorformat': '%f:%l:%c: [%t] %m',
+        \ 'postprocess': function('neomake#makers#ft#python#PylamaEntryProcess'),
+        \ 'output_stream': 'stdout',
+        \ 'exe': '/Users/hiroki_sawano/miniconda3/envs/ppi-rdb/bin/pylava'
+        \ }
+
 """"""""""""""""""""""""""""""
+
+" vim-indent-guides
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_start_level=2
+let g:indent_guides_guide_size=1
 
 """"""""""""""""""""""""""""""
 " change status line's color when switching command and insert mode
