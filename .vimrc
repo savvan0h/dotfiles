@@ -161,11 +161,11 @@ inoremap <silent> jj <ESC>
 """""""""""""""""""
 
 "Gtags
-map <C-g> :Gtags
-map <C-h> :Gtags -f %<CR>
-map <C-j> :GtagsCursor<CR>
-map <C-n> :cn<CR>
-map <C-p> :cp<CR>
+" map <C-g> :Gtags
+" map <C-h> :Gtags -f %<CR>
+" map <C-j> :GtagsCursor<CR>
+noremap <f3> :cp<CR>
+noremap <f4> :cn<CR>
 
 "NERDTree
 let NERDTreeShowHidden = 1
@@ -188,6 +188,10 @@ let buftabs_in_statusline = 1
 
 noremap <f1> :bprev<CR>
 noremap <f2> :bnext<CR>
+
+" ctags -R --fields=+l --languages=python --python-kinds=-iv -f ./tags $(python -c "import os, sys; print(' '.join('{}'.format(d) for d in sys.path if os.path.isdir(d)))") ./
+map <C-n> :lnext<CR>
+map <C-p> :lprev<CR>
 
 " rubocop
 " if syntastic_mode_map is active, syntastic runs when saving buffer
@@ -216,7 +220,7 @@ call neomake#configure#automake('nrwi', 100)
 let g:neomake_open_list = 2
 let g:neomake_python_enabled_makers = ['pylama']
 let g:neomake_python_pylama_maker = {
-        \ 'args': ['--format', 'parsable', '-l', 'pycodestyle,pydocstyle,pyflakes,mccabe'],
+        \ 'args': ['--format', 'parsable', '-o', '~/pylava.ini'],
         \ 'errorformat': '%f:%l:%c: [%t] %m',
         \ 'postprocess': function('neomake#makers#ft#python#PylamaEntryProcess'),
         \ 'output_stream': 'stdout',
