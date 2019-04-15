@@ -226,6 +226,7 @@ let g:neomake_python_pylama_maker = {
         \ 'output_stream': 'stdout',
         \ 'exe': '/usr/local/bin/pylava'
         \ }
+let g:neomake_javascript_enabled_makers = ['eslint']
 
 """"""""""""""""""""""""""""""
 
