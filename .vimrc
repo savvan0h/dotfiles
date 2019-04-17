@@ -96,6 +96,11 @@ set statusline+=[LOW=%l/%L]
 
 set hlsearch
 
+" Don't autofold
+set foldmethod=syntax
+let perl_fold=1
+set foldlevel=100
+
 au QuickfixCmdPost make,grep,grepadd,vimgrep copen | wincmd p
 
 syntax on
