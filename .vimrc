@@ -243,6 +243,10 @@ let g:indent_guides_guide_size=1
 " vim-gitgutter
 set updatetime=250
 
+" vim-table-mode
+" Markdown-compatible tables
+let g:table_mode_corner='|'
+
 """"""""""""""""""""""""""""""
 " change status line's color when switching command and insert mode
 """"""""""""""""""""""""""""""
