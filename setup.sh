@@ -6,3 +6,5 @@ ln -sf ~/dotfiles/.vim/rc/dein.toml ~/.vim/rc
 mkdir -p ~/.config/nvim
 ln -sf ~/.vim ~/.config/nvim
 ln -sf ~/.vimrc ~/.config/nvim/init.vim
+
+ln -sf ~/dotfiles/.tigrc ~/.tigrc
