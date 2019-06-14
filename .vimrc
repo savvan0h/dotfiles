@@ -26,7 +26,7 @@ if dein#load_state(s:dein_dir)
   call dein#add('Shougo/neco-syntax')
   call dein#add('ujihisa/neco-look')
   if has('nvim')
-    call dein#add('uplus/deoplete-solargraph')
+    " call dein#add('uplus/deoplete-solargraph')
     call dein#add('zchee/deoplete-jedi')
   else
     call dein#add('roxma/nvim-yarp')
