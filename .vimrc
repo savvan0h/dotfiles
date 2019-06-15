@@ -190,24 +190,6 @@ set completeopt-=preview
 au BufRead,BufNewFile *.md set filetype=markdown
 let g:previm_open_cmd = 'open -a "Google Chrome"'
 
-" neomake
-call neomake#config#set('ft.python.pylama.exe', 'pylava')
-" Full config: when writing or reading a buffer, and on changes in insert and
-" normal mode (after 1s; no delay when writing).
-call neomake#configure#automake('nrwi', 100)
-let g:neomake_open_list = 2
-let g:neomake_python_enabled_makers = ['pylama']
-let g:neomake_python_pylama_maker = {
-        \ 'args': ['--format', 'parsable', '-o', '~/pylava.ini'],
-        \ 'errorformat': '%f:%l:%c: [%t] %m',
-        \ 'postprocess': function('neomake#makers#ft#python#PylamaEntryProcess'),
-        \ 'output_stream': 'stdout',
-        \ 'exe': '/usr/local/bin/pylava'
-        \ }
-let g:neomake_javascript_enabled_makers = ['eslint']
-
-""""""""""""""""""""""""""""""
-
 " vim-indent-guides
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_start_level=2
