@@ -64,3 +64,10 @@ on_ft = 'python'
 
 [[plugins]]
 repo = 'dhruvasagar/vim-table-mode'
+
+[[plugins]] # Set the buffer filetype based on the code block the cursor currently resides in
+repo = 'osyo-manga/vim-precious'
+depends = ['context_filetype.vim']
+
+[[plugins]] # Find fenced code blocks and their filetype
+repo = 'Shougo/context_filetype.vim'
