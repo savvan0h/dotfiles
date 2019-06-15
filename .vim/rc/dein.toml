@@ -12,7 +12,7 @@ repo = 'Shougo/deoplete.nvim'
 on_i = 1
 hook_add = '''
     let g:deoplete#enable_at_startup = 1
-    let g:deoplete#auto_complete_delay = 1
+    let g:deoplete#auto_complete_delay = 0
     let g:deoplete#auto_complete_start_length = 1
 '''
 
