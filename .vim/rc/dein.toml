@@ -1,4 +1,54 @@
 [[plugins]]
+repo = 'morhetz/gruvbox'
+hook_add = '''
+    colorscheme gruvbox
+    set background=dark
+    set t_Co=256
+    let g:ligthline = { 'colorscheme': 'gruvbox' }
+'''
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+on_i = 1
+hook_add = '''
+    let g:deoplete#enable_at_startup = 1
+    let g:deoplete#auto_complete_delay = 1
+    let g:deoplete#auto_complete_start_length = 1
+'''
+
+[[plugins]]
+repo = 'Shougo/neco-vim'
+on_i = 1
+on_source = ['deoplete']
+
+[[plugins]]
+repo = 'Shougo/neco-syntax'
+on_i = 1
+on_source = ['deoplete']
+
+[[plugins]]
+repo = 'ujihisa/neco-look'
+on_i = 1
+on_source = ['deoplete']
+
+[[plugins]]
+repo = 'zchee/deoplete-jedi'
+if = 'has("nvim")'
+on_ft = 'python'
+on_i = 1
+hook_add = '''
+    let g:deoplete#sources#jedi#python_path = 'python'
+'''
+
+[[plugins]]
+repo = 'roxma/nvim-yarp'
+if = '!has("nvim")'
+
+[[plugins]]
+repo = 'roxma/vim-hug-neovim-rpc'
+if = '!has("nvim")'
+
+[[plugins]]
 repo = 'scrooloose/nerdtree'
 
 [[plugins]]
@@ -48,6 +98,22 @@ repo = 'kannokanno/previm'
 
 [[plugins]]
 repo = 'neomake/neomake'
+hook_add = '''
+    call neomake#config#set('ft.python.pylama.exe', 'pylava')
+    " Full config: when writing or reading a buffer, and on changes in insert and
+    " normal mode (after 1s; no delay when writing).
+    call neomake#configure#automake('nrwi', 100)
+    let g:neomake_open_list = 2
+    let g:neomake_python_enabled_makers = ['pylama']
+    let g:neomake_python_pylama_maker = {
+            \ 'args': ['--format', 'parsable', '-o', '~/pylava.ini'],
+            \ 'errorformat': '%f:%l:%c: [%t] %m',
+            \ 'postprocess': function('neomake#makers#ft#python#PylamaEntryProcess'),
+            \ 'output_stream': 'stdout',
+            \ 'exe': '/usr/local/bin/pylava'
+            \ }
+    let g:neomake_javascript_enabled_makers = ['eslint']
+'''
 
 [[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'

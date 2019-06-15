@@ -18,21 +18,6 @@ if dein#load_state(s:dein_dir)
   call dein#load_toml(s:toml,      {'lazy': 0})
   "call dein#load_toml(s:lazy_toml, {'lazy': 1})
 
-  " gruvbox
-  call dein#add('morhetz/gruvbox')
-  " deoplete setting
-  call dein#add('Shougo/deoplete.nvim')
-  call dein#add('Shougo/neco-vim')
-  call dein#add('Shougo/neco-syntax')
-  call dein#add('ujihisa/neco-look')
-  if has('nvim')
-    " call dein#add('uplus/deoplete-solargraph')
-    call dein#add('zchee/deoplete-jedi')
-  else
-    call dein#add('roxma/nvim-yarp')
-    call dein#add('roxma/vim-hug-neovim-rpc')
-  endif
-
   call dein#end()
   call dein#save_state()
 endif
@@ -151,14 +136,6 @@ function! CBLFoldSetting(lnum)
   endif
 endfunction
 
-" === gruvbox ===
-colorscheme gruvbox
-
-set background=dark
-set t_Co=256
-let g:ligthline = { 'colorscheme': 'gruvbox' }
-" === gruvbox ===
-
 inoremap <silent> jj <ESC>
 
 """""""""""""""""""
@@ -204,12 +181,7 @@ map <C-p> :lprev<CR>
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
 let g:syntastic_ruby_checkers = ['rubocop']
 
-" deoplete
 let g:python3_host_prog='/usr/local/bin/python3'
-let g:deoplete#sources#jedi#python_path = 'python'
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#auto_complete_delay = 1
-let g:deoplete#auto_complete_start_length = 1
 
 set completeopt+=noinsert
 set completeopt-=preview
