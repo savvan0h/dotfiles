@@ -8,3 +8,5 @@ ln -sf ~/.vim ~/.config/nvim
 ln -sf ~/.vimrc ~/.config/nvim/init.vim
 
 ln -sf ~/dotfiles/.tigrc ~/.tigrc
+
+ln -sf ~/dotfiles/.bashrc ~/.bashrc

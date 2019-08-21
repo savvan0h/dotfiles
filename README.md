@@ -14,6 +14,14 @@ $ pip install pylava
 $ pip install pynvim
 ```
 
+* bash 4 or later
+
+```bash
+brew install bash
+sudo sh -c 'echo /usr/local/bin/bash >> /etc/shells'
+chsh -s /usr/local/bin/bash
+```
+
 ## Installation
 ```bash
 $ cd ~
