@@ -91,6 +91,16 @@ au QuickfixCmdPost make,grep,grepadd,vimgrep copen | wincmd p
 syntax on
 let mapleader = ","
 
+" terminal settings
+" change to Terminal-Normal with ESC
+tnoremap <Esc> <C-\><C-n>
+" change to Terminal-Job when entering terminal window
+if has('nvim')
+  autocmd WinEnter * if &buftype ==# 'terminal' | startinsert | endif
+else
+  autocmd WinEnter * if &buftype ==# 'terminal' | normal i | endif
+endif
+
 " make setting
 nnoremap <F5> :w<CR>:make build<CR>
 inoremap <F5> <Esc>:w<CR>:make build<CR>
