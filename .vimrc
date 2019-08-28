@@ -92,6 +92,7 @@ syntax on
 let mapleader = ","
 
 " terminal settings
+noremap <f10> :rightbelow sp \| resize 10 \| term<CR>
 " change to Terminal-Normal with ESC
 tnoremap <Esc> <C-\><C-n>
 " change to Terminal-Job when entering terminal window
