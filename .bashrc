@@ -10,3 +10,19 @@ peco-select-history() {
     READLINE_POINT=${#l}
 }
 bind -x '"\C-r": peco-select-history'
+
+function peco-ssh() {
+  local selected_host=$(awk '
+  tolower($1)=="host" {
+    for (i=2; i<=NF; i++) {
+      if ($i !~ "[*?]") {
+        print $i
+      }
+    }
+  }
+  ' ~/.ssh/config | sort | peco --query "$LBUFFER")
+  if [ -n "$selected_host" ]; then
+    ssh ${selected_host}
+  fi
+}
+alias s='peco-ssh'
