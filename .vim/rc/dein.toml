@@ -137,3 +137,6 @@ depends = ['context_filetype.vim']
 
 [[plugins]] # Find fenced code blocks and their filetype
 repo = 'Shougo/context_filetype.vim'
+
+[[plugins]]
+repo = 'kchmck/vim-coffee-script'
