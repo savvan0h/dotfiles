@@ -58,26 +58,10 @@ set incsearch
 " reload file when switching buffer or focusing vim again
 set autoread
 
-" always show status line
+" vim-airline
 set laststatus=2
-" full path to the file in the buffer.
-set statusline=%F
-" filetype
-set statusline+=%y
-" modified flag, text is "[+]"; "[-]" if 'modifiable' is off.  
-set statusline+=%m
-" readonly flag, text is "[RO]".
-set statusline+=%r
-" help buffer flag, text is "[help]".
-set statusline+=%h
-" preview window flag, text is "[Preview]".
-set statusline+=%w
-" switch to the right side
-set statusline+=%=
-" file encoding
-set statusline+=[ENC=%{&fileencoding}]
-" current line/total lines
-set statusline+=[LOW=%l/%L]
+let g:airline_theme = 'tomorrow'
+let g:airline#extensions#tabline#enabled = 1
 
 set hlsearch
 
@@ -173,12 +157,6 @@ let g:netrw_nogx = 1
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
 
-" buftabs
-" show only file names
-let buftabs_only_basename = 1
-" show in the status bar
-let buftabs_in_statusline = 1
-
 noremap <f1> :bprev<CR>
 noremap <f2> :bnext<CR>
 
@@ -212,40 +190,6 @@ set updatetime=250
 " vim-table-mode
 " Markdown-compatible tables
 let g:table_mode_corner='|'
-
-""""""""""""""""""""""""""""""
-" change status line's color when switching command and insert mode
-""""""""""""""""""""""""""""""
-let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
-
-if has('syntax')
-  augroup InsertHook
-    autocmd!
-    autocmd InsertEnter * call s:StatusLine('Enter')
-    autocmd InsertLeave * call s:StatusLine('Leave')
-  augroup END
-endif
-
-let s:slhlcmd = ''
-function! s:StatusLine(mode)
-  if a:mode == 'Enter'
-    silent! let s:slhlcmd = 'highlight ' . s:GetHighlight('StatusLine')
-    silent exec g:hi_insert
-  else
-    highlight clear StatusLine
-    silent exec s:slhlcmd
-  endif
-endfunction
-
-function! s:GetHighlight(hi)
-  redir => hl
-  exec 'highlight '.a:hi
-  redir END
-  let hl = substitute(hl, '[\r\n]', '', 'g')
-  let hl = substitute(hl, 'xxx', '', '')
-  return hl
-endfunction
-""""""""""""""""""""""""""""""
 
 "nnoremap <F7> :call PRECOMP()<CR>
 nnoremap <F8> :call CBLCOMP()<CR>
