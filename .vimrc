@@ -235,3 +235,6 @@ function! CBLCOMP()
 
 "  exec ':cd '.s:currentdir
 endfunction
+
+" ctrlp
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
