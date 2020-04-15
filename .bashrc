@@ -26,3 +26,4 @@ function peco-ssh() {
   fi
 }
 alias s='peco-ssh'
+alias git-root='cd $(git rev-parse --show-cdup)'
