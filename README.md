@@ -30,6 +30,12 @@ sudo sh -c 'echo /usr/local/bin/bash >> /etc/shells'
 chsh -s /usr/local/bin/bash
 ```
 
+* starship
+
+```
+brew install starship
+```
+
 ## Installation
 ```bash
 $ cd ~
