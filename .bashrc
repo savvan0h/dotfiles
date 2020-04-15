@@ -28,4 +28,6 @@ function peco-ssh() {
 alias s='peco-ssh'
 
 eval "$(starship init bash)"
+alias ls='exa -la -s modified --time-style long-iso'
+alias cat='bat'
 alias git-root='cd $(git rev-parse --show-cdup)'

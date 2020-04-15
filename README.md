@@ -36,6 +36,14 @@ chsh -s /usr/local/bin/bash
 brew install starship
 ```
 
+* exa
+* bat
+
+```
+brew install exa
+brew install bat
+```
+
 ## Installation
 ```bash
 $ cd ~
