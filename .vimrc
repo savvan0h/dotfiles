@@ -137,10 +137,6 @@ inoremap <silent> jj <ESC>
 " Plugin settings
 """""""""""""""""""
 
-"Gtags
-" map <C-g> :Gtags
-" map <C-h> :Gtags -f %<CR>
-" map <C-j> :GtagsCursor<CR>
 noremap <f3> :cp<CR>
 noremap <f4> :cn<CR>
 
@@ -159,10 +155,6 @@ vmap gx <Plug>(openbrowser-smart-search)
 
 noremap <f1> :bprev<CR>
 noremap <f2> :bnext<CR>
-
-" ctags -R --fields=+l --languages=python --python-kinds=-iv -f ./tags $(python -c "import os, sys; print(' '.join('{}'.format(d) for d in sys.path if os.path.isdir(d)))") ./
-map <C-n> :lnext<CR>
-map <C-p> :lprev<CR>
 
 " rubocop
 " if syntastic_mode_map is active, syntastic runs when saving buffer
@@ -190,51 +182,6 @@ set updatetime=250
 " vim-table-mode
 " Markdown-compatible tables
 let g:table_mode_corner='|'
-
-"nnoremap <F7> :call PRECOMP()<CR>
-nnoremap <F8> :call CBLCOMP()<CR>
-
-"function! PRECOMP()
-"  let s:currentdir=expand('%:p:h')
-"
-"  let s:makedir=expand('%:p:h:h')
-"  let s:makedir.='/make/'
-"  exe ':cd '.s:makedir
-"
-"  let &makeprg='make clean -f '
-"  let &makeprg.=expand('%:t:r')
-"  let &makeprg.='_P.mak'
-"  exec ':make'
-"
-"  let &makeprg='make -f '
-"  let &makeprg.=expand('%:t:r')
-"  let &makeprg.='_P.mak'
-"  exec ':make'
-"
-"  exec ':cd '.s:currentdir
-"endfunction
-
-function! CBLCOMP()
-" let s:currentdir=expand('%:p:h')
-
-" let s:makedir=expand('%:p:h:h')
-" let s:makedir.='/make/'
-" exe ':cd '.s:makedir
-
-" let &makeprg='make clean -f '
-" let &makeprg.=expand('%:t:r')
-" let &makeprg.='_C.mak'
-" exec ':make'
-
-  let &makeprg='make -f '
-  let &makeprg.=expand('%:p:h:h')
-  let &makeprg.='/make/'
-  let &makeprg.=expand('%:t:r')
-  let &makeprg.='.mak'
-  exec ':make'
-
-"  exec ':cd '.s:currentdir
-endfunction
 
 " ctrlp
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
