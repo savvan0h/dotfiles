@@ -1,0 +1,8 @@
+{
+    "suggest.noselect": true,
+    "suggest.preferCompleteThanJumpPlaceholder": true,
+    "python.jediEnabled": false,
+    "python.linting.pylamaEnabled": true,
+    "python.linting.pylamaArgs": ["--format", "parsable", "-o", "~/pylava.ini"],
+    "python.linting.pylamaPath": "pylava"
+}
