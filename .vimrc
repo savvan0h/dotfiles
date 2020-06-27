@@ -156,17 +156,6 @@ vmap gx <Plug>(openbrowser-smart-search)
 noremap <f1> :bprev<CR>
 noremap <f2> :bnext<CR>
 
-" rubocop
-" if syntastic_mode_map is active, syntastic runs when saving buffer
-" specify target filetype as active_filetypes
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
-let g:syntastic_ruby_checkers = ['rubocop']
-
-let g:python3_host_prog='/usr/local/bin/python3'
-
-set completeopt+=noinsert
-set completeopt-=preview
-
 " markdown preview
 au BufRead,BufNewFile *.md set filetype=markdown
 let g:previm_open_cmd = 'open -a "Google Chrome"'
