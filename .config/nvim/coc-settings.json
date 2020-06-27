@@ -4,5 +4,7 @@
     "python.jediEnabled": false,
     "python.linting.pylamaEnabled": true,
     "python.linting.pylamaArgs": ["--format", "parsable", "-o", "~/pylava.ini"],
-    "python.linting.pylamaPath": "pylava"
+    "python.linting.pylamaPath": "pylava",
+    "eslint.enable": true,
+    "eslint.filetypes": ["javascript"]
 }
