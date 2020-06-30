@@ -7,6 +7,8 @@
     "python.linting.pylamaEnabled": true,
     "python.linting.pylamaArgs": ["--format", "parsable", "-o", "~/pylava.ini"],
     "python.linting.pylamaPath": "/Users/hiroki_sawano/miniconda3/bin/pylava",
+    "python.formatting.provider": "autopep8",
+    "python.formatting.autopep8Path": "/Users/hiroki_sawano/miniconda3/bin/autopep8",
     "eslint.enable": true,
     "eslint.filetypes": ["javascript"]
 }
