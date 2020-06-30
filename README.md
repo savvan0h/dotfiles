@@ -4,6 +4,8 @@
 * Neovim
 * Python3
 * pylava
+* autopep8
+* isort
 * nodejs >= 10.12
 * eslint
 
@@ -12,8 +14,7 @@ $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/inst
 $ brew install neovim
 $ brew install python3
 $ pip3 install neovim
-$ pip install pylava
-$ pip install pynvim
+$ pip install pylava pynvim autopep8 isort
 $ nvm install 13
 $ npm install -g eslint
 ```
