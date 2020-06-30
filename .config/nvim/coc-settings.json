@@ -5,7 +5,7 @@
     "python.jediEnabled": false,
     "python.linting.pylamaEnabled": true,
     "python.linting.pylamaArgs": ["--format", "parsable", "-o", "~/pylava.ini"],
-    "python.linting.pylamaPath": "pylava",
+    "python.linting.pylamaPath": "/Users/hiroki_sawano/miniconda3/bin/pylava",
     "eslint.enable": true,
     "eslint.filetypes": ["javascript"]
 }
