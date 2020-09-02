@@ -31,3 +31,5 @@ eval "$(starship init bash)"
 alias ls='exa -la -s modified --time-style long-iso'
 alias cat='bat'
 alias git-root='cd $(git rev-parse --show-cdup)'
+
+export LANG=en_US.UTF-8
