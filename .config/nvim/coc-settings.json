@@ -10,5 +10,15 @@
     "python.formatting.provider": "autopep8",
     "python.formatting.autopep8Path": "/Users/hiroki_sawano/miniconda3/bin/autopep8",
     "eslint.enable": true,
-    "eslint.filetypes": ["javascript"]
+    "eslint.filetypes": ["javascript"],
+    "java.home": "/Library/Java/JavaVirtualMachines/adoptopenjdk-14.jdk/Contents/Home/",
+    "java.configuration.runtimes": [
+      {
+        "name": "Java8",
+        "path": "/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/",
+        "default": true
+      }
+    ],
+    "java.import.maven.enabled": true,
+    "java.format.settings.url": "/Users/hiroki_sawano/formatter.xml"
 }
