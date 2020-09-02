@@ -40,7 +40,7 @@ set nobackup
 set nowritebackup
 set noswapfile
 set noundofile
-set fileencodings=iso-2022-jp-3,iso-2022-jp,euc-jisx0213,euc-jp,utf-8,ucs-bom,euc-jp,eucjp-ms,cp932
+set fileencodings=utf-8,iso-2022-jp-3,iso-2022-jp,euc-jisx0213,euc-jp,ucs-bom,euc-jp,eucjp-ms,cp932
 set encoding=utf-8
 set fileformats=unix,dos,mac
 "set guifont=Migu_1M:h12
