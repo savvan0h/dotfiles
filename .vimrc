@@ -139,8 +139,8 @@ inoremap <silent> jj <ESC>
 " Plugin settings
 """""""""""""""""""
 
-noremap <f3> :cp<CR>
-noremap <f4> :cn<CR>
+noremap <Tab> :cn<CR>
+noremap <S-Tab> :cp<CR>
 
 "NERDTree
 let NERDTreeShowHidden = 1
