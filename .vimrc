@@ -64,6 +64,7 @@ set autoread
 set laststatus=2
 let g:airline_theme = 'tomorrow'
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#hunks#enabled = 0
 
 set hlsearch
 
