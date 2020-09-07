@@ -19,6 +19,12 @@
         "default": true
       }
     ],
+    "java.referencesCodeLens.enabled": true,
     "java.import.maven.enabled": true,
-    "java.format.settings.url": "/Users/hiroki_sawano/formatter.xml"
+    "java.autobuild.enabled": true,
+    "java.format.enabled": true,
+    "java.format.settings.url": "/Users/hiroki_sawano/formatter.xml",
+    "java.format.comments.enabled": true,
+    "java.format.onType.enabled": true,
+    "java.signatureHelp.enabled": true
 }
