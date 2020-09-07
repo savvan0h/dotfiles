@@ -32,9 +32,6 @@ repo = 'yuku-t/vim-ref-ri'
 repo = 'szw/vim-tags'
 
 [[plugins]]
-repo = 'tpope/vim-endwise'
-
-[[plugins]]
 repo = 'tyru/open-browser.vim'
 
 [[plugins]]
