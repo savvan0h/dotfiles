@@ -26,5 +26,6 @@
     "java.format.settings.url": "/Users/hiroki_sawano/formatter.xml",
     "java.format.comments.enabled": true,
     "java.format.onType.enabled": true,
-    "java.signatureHelp.enabled": true
+    "java.signatureHelp.enabled": true,
+    "java.completion.importOrder": ["java", "javax", "org", "com"]
 }
