@@ -9,9 +9,9 @@
     "--format",
     "parsable",
     "-o",
-    "~/pylava.ini"
+    "~/pylama.ini"
   ],
-  "python.linting.pylamaPath": "/Users/hiroki_sawano/miniconda3/bin/pylava",
+  "python.linting.pylamaPath": "/Users/hiroki_sawano/miniconda3/bin/pylama",
   "python.formatting.provider": "autopep8",
   "python.formatting.autopep8Path": "/Users/hiroki_sawano/miniconda3/bin/autopep8",
   "eslint.enable": true,
