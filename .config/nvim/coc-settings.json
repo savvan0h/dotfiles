@@ -14,6 +14,7 @@
   "python.linting.pylamaPath": "/Users/hiroki_sawano/miniconda3/bin/pylama",
   "python.formatting.provider": "autopep8",
   "python.formatting.autopep8Path": "/Users/hiroki_sawano/miniconda3/bin/autopep8",
+  "pyright.organizeimports.provider": "isort",
   "eslint.enable": true,
   "eslint.filetypes": [
     "javascript"
