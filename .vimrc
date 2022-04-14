@@ -184,6 +184,19 @@ let g:ctrlp_prompt_mappings = {
 
 " coc.nvim
 
+let g:coc_global_extensions = [
+    \'coc-css',
+    \'coc-eslint',
+    \'coc-html',
+    \'coc-java',
+    \'coc-json',
+    \'coc-pairs',
+    \'coc-phpls',
+    \'coc-pyright',
+    \'coc-tsserver',
+    \'coc-yaml'
+    \]
+
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 " Always show the signcolumn, otherwise it would shift the text each time
