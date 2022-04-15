@@ -6,8 +6,6 @@
   "python.sortImports.path": "/Users/hiroki_sawano/miniconda3/bin/isort",
   "python.linting.pylamaEnabled": true,
   "python.linting.pylamaArgs": [
-    "--format",
-    "parsable",
     "-o",
     "~/pylama.ini"
   ],
