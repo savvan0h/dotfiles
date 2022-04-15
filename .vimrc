@@ -194,7 +194,8 @@ let g:coc_global_extensions = [
     \'coc-phpls',
     \'coc-pyright',
     \'coc-tsserver',
-    \'coc-yaml'
+    \'coc-yaml',
+    \'coc-highlight'
     \]
 
 " Don't pass messages to |ins-completion-menu|.
