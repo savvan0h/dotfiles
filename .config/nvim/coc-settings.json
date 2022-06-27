@@ -12,9 +12,6 @@
   "python.formatting.autopep8Path": "/Users/hiroki_sawano/miniconda3/bin/autopep8",
   "pyright.organizeimports.provider": "isort",
   "eslint.enable": true,
-  "eslint.filetypes": [
-    "javascript"
-  ],
   "tsserver.enableJavascript": true,
   "java.home": "/Library/Java/JavaVirtualMachines/adoptopenjdk-14.jdk/Contents/Home/",
   "java.configuration.runtimes": [
