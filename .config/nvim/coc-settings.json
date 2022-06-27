@@ -21,7 +21,7 @@
   "java.home": "/Library/Java/JavaVirtualMachines/adoptopenjdk-14.jdk/Contents/Home/",
   "java.configuration.runtimes": [
     {
-      "name": "Java8",
+      "name": "JavaSE-1.8",
       "path": "/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/",
       "default": true
     }
