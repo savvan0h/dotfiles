@@ -6,8 +6,7 @@
   "python.linting.pylamaEnabled": true,
   "python.linting.pylamaPath": "pylama",
   "python.linting.pylamaArgs": [
-    "-o",
-    "~/pylama.ini"
+    "--options=/Users/hiroki_sawano/pylama.ini"
   ],
   "python.linting.pylamaPath": "/Users/hiroki_sawano/miniconda3/bin/pylama",
   "python.formatting.provider": "autopep8",
