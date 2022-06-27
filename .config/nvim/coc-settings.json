@@ -2,7 +2,7 @@
   "suggest.noselect": true,
   "suggest.preferCompleteThanJumpPlaceholder": true,
   "diagnostic.refreshOnInsertMode": true,
-  "python.sortImports.path": "/Users/hiroki_sawano/miniconda3/bin/isort",
+  "python.sortImports.path": "isort",
   "python.linting.pylamaEnabled": true,
   "python.linting.pylamaArgs": [
     "-o",
