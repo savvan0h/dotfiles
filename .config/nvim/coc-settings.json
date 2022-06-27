@@ -4,6 +4,7 @@
   "diagnostic.refreshOnInsertMode": true,
   "python.sortImports.path": "isort",
   "python.linting.pylamaEnabled": true,
+  "python.linting.pylamaPath": "pylama",
   "python.linting.pylamaArgs": [
     "-o",
     "~/pylama.ini"
