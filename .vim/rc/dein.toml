@@ -44,9 +44,6 @@ repo = 'bronson/vim-trailing-whitespace'
 repo = 'thinca/vim-visualstar'
 
 [[plugins]]
-repo = 'vim-scripts/DrawIt'
-
-[[plugins]]
 repo = 'plasticboy/vim-markdown'
 
 [[plugins]]
