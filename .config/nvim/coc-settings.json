@@ -13,6 +13,7 @@
   "pyright.organizeimports.provider": "isort",
   "eslint.enable": true,
   "tsserver.enableJavascript": true,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
   "java.home": "/Library/Java/JavaVirtualMachines/adoptopenjdk-14.jdk/Contents/Home/",
   "java.configuration.runtimes": [
     {
