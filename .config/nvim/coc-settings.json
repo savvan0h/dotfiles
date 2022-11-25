@@ -5,9 +5,7 @@
   "python.sortImports.path": "isort",
   "python.linting.pylamaEnabled": true,
   "python.linting.pylamaPath": "pylama",
-  "python.linting.pylamaArgs": [
-    "--options=/Users/hiroki_sawano/pylama.ini"
-  ],
+  "python.linting.pylamaArgs": ["--options=/Users/hiroki_sawano/pylama.ini"],
   "python.formatting.provider": "autopep8",
   "python.formatting.autopep8Path": "/Users/hiroki_sawano/miniconda3/bin/autopep8",
   "pyright.organizeimports.provider": "isort",
@@ -30,16 +28,10 @@
   "java.format.comments.enabled": true,
   "java.format.onType.enabled": true,
   "java.signatureHelp.enabled": true,
-  "java.completion.importOrder": [
-    "java",
-    "javax",
-    "org",
-    "com"
-  ],
+  "java.completion.importOrder": ["java", "javax", "org", "com"],
   "yaml.format.enable": true,
   "yaml.validate": true,
-  "yaml.schemas": {
-  },
+  "yaml.schemas": {},
   "yaml.customTags": [
     "!And",
     "!And sequence",
