@@ -87,3 +87,7 @@ repo = 'ctrlpvim/ctrlp.vim'
 
 [[plugins]]
 repo = 'rhysd/clever-f.vim'
+
+# Fix clipboard=unnamed issue (https://github.com/neovim/neovim/issues/1822)
+[[plugins]]
+repo = 'lambdalisue/pastefix.vim'

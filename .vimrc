@@ -102,6 +102,7 @@ noremap <Space>h <C-W>h
 noremap <Space>l <C-W>l
 
 " yank to clipboard
+" Use pastefix.vim to avoid https://github.com/neovim/neovim/issues/1822
 if has('nvim')
   set clipboard+=unnamedplus
 else
