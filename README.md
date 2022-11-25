@@ -8,6 +8,7 @@
 * isort
 * nodejs >= 10.12
 * eslint
+* prettier
 
 ```
 $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -17,6 +18,7 @@ $ pip3 install neovim
 $ pip install 'pylama<=8' pynvim autopep8 isort
 $ nvm install 13
 $ npm install -g eslint
+$ npm install prettier -D --save-exact
 ```
 
 * ghq

@@ -194,6 +194,7 @@ let g:coc_global_extensions = [
     \'coc-phpls',
     \'coc-pyright',
     \'coc-tsserver',
+    \'coc-prettier',
     \'coc-yaml',
     \'coc-highlight'
     \]
