@@ -32,23 +32,23 @@ $ brew install peco
 * bash 4 or later
 
 ```
-brew install bash
-sudo sh -c 'echo /usr/local/bin/bash >> /etc/shells'
-chsh -s /usr/local/bin/bash
+$ brew install bash
+$ sudo sh -c 'echo /usr/local/bin/bash >> /etc/shells'
+$ chsh -s /usr/local/bin/bash
 ```
 
 * starship
 
 ```
-brew install starship
+$ brew install starship
 ```
 
 * exa
 * bat
 
 ```
-brew install exa
-brew install bat
+$ brew install exa
+$ brew install bat
 ```
 
 ## Installation
