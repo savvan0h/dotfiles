@@ -91,3 +91,6 @@ repo = 'rhysd/clever-f.vim'
 # Fix clipboard=unnamed issue (https://github.com/neovim/neovim/issues/1822)
 [[plugins]]
 repo = 'lambdalisue/pastefix.vim'
+
+[[plugins]]
+repo = 'HerringtonDarkholme/yats.vim'
