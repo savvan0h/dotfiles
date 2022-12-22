@@ -89,11 +89,6 @@ else
   autocmd WinEnter * if &buftype ==# 'terminal' | normal i | endif
 endif
 
-" make setting
-nnoremap <F5> :w<CR>:make build<CR>
-inoremap <F5> <Esc>:w<CR>:make build<CR>
-nnoremap <F6> :w<CR>:make run<CR>
-inoremap <F6> <Esc>:w<CR>:make run<CR>
 
 " key mappings for moving between windows
 noremap <Space>j <C-W>j
