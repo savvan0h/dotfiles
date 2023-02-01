@@ -10,6 +10,7 @@
   "python.sortImports.args": ["--known-local-folder=apps"],
   "pyright.organizeimports.provider": "isort",
   "eslint.enable": true,
+  "prettier.prettierPath": "prettier",
   "tsserver.enableJavascript": true,
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
   "java.home": "/Library/Java/JavaVirtualMachines/adoptopenjdk-14.jdk/Contents/Home/",
