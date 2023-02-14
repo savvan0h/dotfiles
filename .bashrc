@@ -3,6 +3,7 @@ alias view='nvim -R'
 
 alias gp='cd "$(ghq list --full-path | peco)" && clear && pwd'
 alias bp='git checkout $(git branch | tr -d " " | tr -d "*" | peco)'
+alias ca='conda activate $(conda env list | grep -v ^# | cut -d" " -f1 | peco)'
 alias kzf='kustomize build | yq e "select(.metadata.name == \"$(kustomize build | yq -N e .metadata.name - | sort | uniq | peco)\")" -'
 alias kzfns='kustomize build | yq e "select(.metadata.namespace == \"$(kustomize build | yq -N e .metadata.namespace - | sort | uniq | peco)\")" -'
 
