@@ -13,7 +13,7 @@
   "prettier.prettierPath": "prettier",
   "tsserver.enableJavascript": true,
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
-  "java.home": "/Library/Java/JavaVirtualMachines/adoptopenjdk-14.jdk/Contents/Home/",
+  "java.jdt.ls.java.home": "/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home/",
   "java.configuration.runtimes": [
     {
       "name": "JavaSE-1.8",
