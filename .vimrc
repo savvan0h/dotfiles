@@ -63,9 +63,7 @@ set autoread
 set hlsearch
 
 " Don't autofold
-set foldmethod=syntax
-let perl_fold=1
-set foldlevel=100
+set nofoldenable
 
 au QuickfixCmdPost make,grep,grepadd,vimgrep copen | wincmd p
 
