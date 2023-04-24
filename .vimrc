@@ -1,3 +1,5 @@
+let mapleader = ","
+
 let s:dein_dir = expand('~/.cache/dein')
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
@@ -68,7 +70,6 @@ set nofoldenable
 au QuickfixCmdPost make,grep,grepadd,vimgrep copen | wincmd p
 
 syntax on
-let mapleader = ","
 
 " terminal settings
 noremap <f10> :rightbelow sp \| resize 10 \| term<CR>
