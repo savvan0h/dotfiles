@@ -1,0 +1,14 @@
+[[plugins]]
+repo = 'bronson/vim-trailing-whitespace'
+
+[[plugins]]
+repo = 'simeji/winresizer'
+hook_add = '''
+  let g:winresizer_start_key = '<C-T>'
+'''
+
+[[plugins]]
+repo = 'wesQ3/vim-windowswap'
+
+[[plugins]]
+repo = 'thinca/vim-visualstar'

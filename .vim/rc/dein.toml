@@ -8,6 +8,14 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'scrooloose/nerdtree'
+hook_add = '''
+  let NERDTreeShowHidden = 1
+  let g:NERDTreeWinSize = 38
+  nnoremap <silent><C-e> :NERDTreeToggle<CR>
+'''
+
+[[plugins]]
 repo = 'neoclide/coc.nvim'
 rev = 'release'
 on_i = 1
@@ -170,23 +178,6 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'scrooloose/nerdtree'
-hook_add = '''
-  let NERDTreeShowHidden = 1
-  let g:NERDTreeWinSize = 38
-  nnoremap <silent><C-e> :NERDTreeToggle<CR>
-'''
-
-[[plugins]]
-repo = 'simeji/winresizer'
-hook_add = '''
-  let g:winresizer_start_key = '<C-T>'
-'''
-
-[[plugins]]
-repo = 'wesQ3/vim-windowswap'
-
-[[plugins]]
 repo = 'tyru/open-browser.vim'
 hook_add = '''
   nmap gx <Plug>(openbrowser-smart-search)
@@ -195,12 +186,6 @@ hook_add = '''
 
 [[plugins]]
 repo = 'Shougo/unite.vim'
-
-[[plugins]]
-repo = 'bronson/vim-trailing-whitespace'
-
-[[plugins]]
-repo = 'thinca/vim-visualstar'
 
 [[plugins]]
 repo = 'plasticboy/vim-markdown'
