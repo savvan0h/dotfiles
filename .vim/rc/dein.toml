@@ -187,9 +187,6 @@ hook_add = '''
 repo = 'wesQ3/vim-windowswap'
 
 [[plugins]]
-repo = 'szw/vim-tags'
-
-[[plugins]]
 repo = 'tyru/open-browser.vim'
 hook_add = '''
   nmap gx <Plug>(openbrowser-smart-search)
