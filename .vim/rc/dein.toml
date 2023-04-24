@@ -187,9 +187,6 @@ hook_add = '''
 repo = 'wesQ3/vim-windowswap'
 
 [[plugins]]
-repo = 'thinca/vim-ref'
-
-[[plugins]]
 repo = 'yuku-t/vim-ref-ri'
 
 [[plugins]]
