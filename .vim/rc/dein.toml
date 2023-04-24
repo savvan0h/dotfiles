@@ -262,3 +262,18 @@ repo = 'lambdalisue/pastefix.vim'
 
 [[plugins]]
 repo = 'HerringtonDarkholme/yats.vim'
+
+[[plugins]]
+repo = 'simeji/winresizer'
+hook_add = '''
+  let g:winresizer_start_key = '<C-T>'
+'''
+
+[[plugins]]
+repo = 'wesQ3/vim-windowswap'
+
+[[plugins]]
+repo = 'bronson/vim-trailing-whitespace'
+
+[[plugins]]
+repo = 'thinca/vim-visualstar'
