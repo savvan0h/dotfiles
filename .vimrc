@@ -75,13 +75,6 @@ syntax on
 noremap <f10> :rightbelow sp \| resize 10 \| term<CR>
 " change to Terminal-Normal with ESC
 tnoremap <Esc> <C-\><C-n>
-" change to Terminal-Job when entering terminal window
-if has('nvim')
-  autocmd WinEnter * if &buftype ==# 'terminal' | startinsert | endif
-else
-  autocmd WinEnter * if &buftype ==# 'terminal' | normal i | endif
-endif
-
 
 " key mappings for moving between windows
 noremap <Space>j <C-W>j
