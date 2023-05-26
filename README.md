@@ -4,7 +4,7 @@
 * Neovim
 * Python3
 * pylama <= 8 (current coc-pyright does not support new parsable format)
-* autopep8
+* black
 * isort
 * nodejs >= 10.12
 * eslint
@@ -15,7 +15,7 @@ $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/inst
 $ brew install neovim
 $ brew install python3
 $ pip3 install neovim
-$ pip install 'pylama<=8' pynvim autopep8 isort
+$ pip install 'pylama<=8' pynvim black isort
 $ nvm install 13
 $ npm install -g eslint
 $ npm install prettier -D --save-exact
