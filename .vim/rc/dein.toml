@@ -194,7 +194,7 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'kannokanno/previm'
+repo = 'previm/previm'
 hook_add = '''
   let g:previm_open_cmd = 'open -a "Google Chrome"'
 '''
