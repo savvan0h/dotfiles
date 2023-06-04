@@ -278,3 +278,6 @@ repo = 'bronson/vim-trailing-whitespace'
 
 [[plugins]]
 repo = 'thinca/vim-visualstar'
+
+[[plugins]]
+repo = 'github/copilot.vim'
