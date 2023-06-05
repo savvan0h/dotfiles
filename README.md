@@ -1,7 +1,7 @@
 # dotfiles
 
 ## Prerequisite
-* Neovim
+* Neovim >= 0.9
 * Python3
 * pylama <= 8 (current coc-pyright does not support new parsable format)
 * black
