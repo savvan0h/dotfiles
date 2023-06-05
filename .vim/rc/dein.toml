@@ -242,13 +242,17 @@ hook_add = '''
 repo = 'vim-airline/vim-airline-themes'
 
 [[plugins]]
-repo = 'ctrlpvim/ctrlp.vim'
+repo = 'nvim-lua/plenary.nvim'
+
+[[plugins]]
+repo = 'nvim-telescope/telescope.nvim'
+rev = '0.1.1'
+depends = ['plenary.nvim']
 hook_add = '''
-  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-  let g:ctrlp_prompt_mappings = {
-    \   'PrtCurRight()':   ['<right>'],
-    \   'PrtClearCache()': ['<F5>', '<C-l>'],
-    \ }
+  nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+  nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+  nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+  nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 '''
 
 [[plugins]]
