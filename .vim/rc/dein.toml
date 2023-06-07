@@ -256,6 +256,9 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'airblade/vim-rooter'
+
+[[plugins]]
 repo = 'rhysd/clever-f.vim'
 
 # Fix clipboard=unnamed issue (https://github.com/neovim/neovim/issues/1822)
