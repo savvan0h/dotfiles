@@ -285,3 +285,12 @@ repo = 'thinca/vim-visualstar'
 
 [[plugins]]
 repo = 'github/copilot.vim'
+hook_add = '''
+  let g:copilot_filetypes = {
+      \ 'gitcommit': v:true,
+      \ 'markdown': v:true,
+      \ 'yaml': v:true,
+      \ 'TelescopeResults': v:false,
+      \ 'TelescopePrompt': v:false
+      \ }
+'''
