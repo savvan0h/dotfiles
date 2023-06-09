@@ -1,2 +1,5 @@
 [[plugins]]
 repo = 'ntpeters/vim-better-whitespace'
+hook_add = '''
+  autocmd TermOpen * :DisableWhitespace
+'''
