@@ -278,9 +278,6 @@ hook_add = '''
 repo = 'wesQ3/vim-windowswap'
 
 [[plugins]]
-repo = 'bronson/vim-trailing-whitespace'
-
-[[plugins]]
 repo = 'thinca/vim-visualstar'
 
 [[plugins]]

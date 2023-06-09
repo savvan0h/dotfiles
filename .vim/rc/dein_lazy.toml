@@ -1,0 +1,2 @@
+[[plugins]]
+repo = 'ntpeters/vim-better-whitespace'
