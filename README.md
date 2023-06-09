@@ -45,10 +45,12 @@ $ brew install starship
 
 * exa
 * bat
+* ripgrep
 
 ```
 $ brew install exa
 $ brew install bat
+$ brew install ripgrep
 ```
 
 ## Installation
