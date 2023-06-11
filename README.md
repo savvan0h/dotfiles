@@ -21,6 +21,13 @@ $ npm install -g eslint
 $ npm install prettier -D --save-exact
 ```
 
+* Nerd Fonts
+
+```
+$ brew tap homebrew/cask-fonts
+$ brew install font-Hack-nerd-font
+```
+
 * ghq
 * peco
 
