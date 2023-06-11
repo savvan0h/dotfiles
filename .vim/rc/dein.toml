@@ -291,3 +291,6 @@ hook_add = '''
       \ 'TelescopePrompt': v:false
       \ }
 '''
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
