@@ -294,3 +294,9 @@ hook_add = '''
 
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
+
+[[plugins]]
+repo = 'ntpeters/vim-better-whitespace'
+hook_add = '''
+  autocmd TermOpen * :DisableWhitespace
+'''
