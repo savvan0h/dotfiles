@@ -10,9 +10,14 @@ alias kzfns='kustomize build | yq e "select(.metadata.namespace == \"$(kustomize
 HISTFILE=~/.zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
+setopt hist_ignore_dups
+setopt hist_ignore_all_dups
+setopt hist_ignore_space
+setopt hist_reduce_blanks
+setopt hist_save_no_dups
 
 function peco-select-history() {
-  BUFFER=$(history -n 1 | tail -r | awk '!a[$0]++' | peco --query "$LBUFFER")
+  BUFFER=$(history -n 1 | tail -r | peco --query "$LBUFFER")
   CURSOR=$#BUFFER
   zle reset-prompt
 }
