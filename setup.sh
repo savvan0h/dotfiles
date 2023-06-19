@@ -1,5 +1,7 @@
 #!/bin/bash
 
+xcode-select --install
+
 if [[ -z "$(command -v brew)" ]]; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
