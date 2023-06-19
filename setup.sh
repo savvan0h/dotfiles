@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [[ "$(uname)" != "Darwin" ]]; then
+  echo "Unsupported system."
+  exit 1
+fi
+
 xcode-select --install
 
 if [[ -z "$(command -v brew)" ]]; then
