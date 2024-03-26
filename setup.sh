@@ -13,6 +13,9 @@ fi
 
 brew bundle --file ./Brewfile
 
+# Install nvm(Homebrew installation is not supported)
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+
 mkdir -p ~/.vim/rc
 ln -sf ~/dotfiles/.vimrc ~/.vimrc
 ln -sf ~/dotfiles/.vim/rc/dein.toml ~/.vim/rc
