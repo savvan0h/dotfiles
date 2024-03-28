@@ -247,7 +247,6 @@ repo = 'nvim-lua/plenary.nvim'
 
 [[plugins]]
 repo = 'nvim-telescope/telescope.nvim'
-rev = '0.1.1'
 depends = ['plenary.nvim']
 hook_add = '''
   nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
