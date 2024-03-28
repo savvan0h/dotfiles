@@ -294,6 +294,10 @@ hook_add = '''
       \ 'TelescopeResults': v:false,
       \ 'TelescopePrompt': v:false
       \ }
+
+  "Keybindings
+  inoremap <silent> <C-j> <Plug>(copilot-next)
+  inoremap <silent> <C-k> <Plug>(copilot-previous)
 '''
 
 [[plugins]]
