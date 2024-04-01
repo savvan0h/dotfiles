@@ -323,3 +323,26 @@ require'noice'.setup {
 }
 EOF
 '''
+
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+if = 'has("nvim")'
+hook_post_update = 'TSUpdate'
+hook_source = '''
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = {
+    'python',
+    'javascript',
+    'typescript',
+    'json',
+    'yaml',
+    'toml',
+  },
+  highlight = {
+    enable = true,
+    disable = {},
+  },
+}
+EOF
+'''
