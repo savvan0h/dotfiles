@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -ue
+
 if [[ "$(uname)" != "Darwin" ]]; then
   echo "Unsupported system."
   exit 1
