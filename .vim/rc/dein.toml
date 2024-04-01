@@ -307,3 +307,19 @@ repo = 'ntpeters/vim-better-whitespace'
 hook_add = '''
   autocmd TermOpen * :DisableWhitespace
 '''
+
+[[plugins]]
+repo = 'MunifTanjim/nui.nvim'
+
+[[plugins]]
+repo = 'rcarriga/nvim-notify'
+
+[[plugins]]
+repo = 'folke/noice.nvim'
+depends = ['nui.nvim', 'nvim-notify']
+hook_add = '''
+lua <<EOF
+require'noice'.setup {
+}
+EOF
+'''
