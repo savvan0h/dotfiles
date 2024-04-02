@@ -24,6 +24,9 @@ if dein#load_state(s:dein_dir)
   call dein#save_state()
 endif
 
+" See https://github.com/Shougo/dein.vim/issues/50
+call dein#call_hook('source')
+
 if dein#check_install()
   call dein#install()
 endif
