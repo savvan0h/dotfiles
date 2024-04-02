@@ -313,6 +313,15 @@ repo = 'MunifTanjim/nui.nvim'
 
 [[plugins]]
 repo = 'rcarriga/nvim-notify'
+hook_add = '''
+lua <<EOF
+require'notify'.setup {
+  render = 'wrapped-compact',
+  max_width = 60,
+  stages = 'slide',
+}
+EOF
+'''
 
 [[plugins]]
 repo = 'folke/noice.nvim'
