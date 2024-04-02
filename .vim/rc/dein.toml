@@ -348,6 +348,7 @@ require'nvim-treesitter.configs'.setup {
     'yaml',
     'toml',
     'lua',
+    'vim',
   },
   highlight = {
     enable = true,
