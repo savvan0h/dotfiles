@@ -9,6 +9,13 @@ alias ca='conda activate $(conda env list | grep -v ^# | cut -d" " -f1 | peco)'
 alias kzf='kustomize build | yq e "select(.metadata.name == \"$(kustomize build | yq -N e .metadata.name - | sort | uniq | peco)\")" -'
 alias kzfns='kustomize build | yq e "select(.metadata.namespace == \"$(kustomize build | yq -N e .metadata.namespace - | sort | uniq | peco)\")" -'
 
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
+
 HISTFILE=~/.zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
