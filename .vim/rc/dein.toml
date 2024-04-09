@@ -341,6 +341,7 @@ hook_source = '''
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
   ensure_installed = {
+    'java',
     'python',
     'javascript',
     'typescript',
