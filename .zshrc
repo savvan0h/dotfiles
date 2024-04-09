@@ -17,6 +17,7 @@ setopt hist_ignore_all_dups
 setopt hist_ignore_space
 setopt hist_reduce_blanks
 setopt hist_save_no_dups
+setopt share_history
 
 function peco-select-history() {
   BUFFER=$(history -n 1 | tail -r | peco --query "$LBUFFER")
