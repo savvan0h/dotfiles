@@ -1,7 +1,9 @@
 alias vim='nvim'
 alias view='nvim -R'
 
-alias gp='cd "$(ghq list --full-path | peco)" && clear && pwd'
+# Avoid using slow ghq list
+# See: https://github.com/x-motemen/ghq/issues/323
+alias gp='cd "$(find $(ghq root) -maxdepth 4 -type d -name .git | xargs -n1 dirname | peco)" && clear && pwd'
 alias bp='git checkout $(git branch | tr -d " " | tr -d "*" | peco)'
 alias ca='conda activate $(conda env list | grep -v ^# | cut -d" " -f1 | peco)'
 alias kzf='kustomize build | yq e "select(.metadata.name == \"$(kustomize build | yq -N e .metadata.name - | sort | uniq | peco)\")" -'
