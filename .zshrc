@@ -1,3 +1,6 @@
+# Plugins
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 alias vim='nvim'
 alias view='nvim -R'
 
