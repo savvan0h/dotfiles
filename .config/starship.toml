@@ -145,3 +145,6 @@ symbol = " "
 
 [spack]
 symbol = "🅢 "
+
+[gcloud]
+disabled = true
