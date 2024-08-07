@@ -349,6 +349,9 @@ depends = ['nui.nvim', 'nvim-notify']
 hook_add = '''
 lua <<EOF
 require'noice'.setup {
+  presets = {
+    command_palette = true,
+  },
 }
 EOF
 '''
