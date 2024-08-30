@@ -11,6 +11,7 @@
   "eslint.enable": true,
   "prettier.prettierPath": "prettier",
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+  "typescript.preferences.quoteStyle": "single",
   "java.jdt.ls.java.home": "/Library/Java/JavaVirtualMachines/adoptopenjdk-14.jdk/Contents/Home/",
   "java.configuration.runtimes": [
     {
