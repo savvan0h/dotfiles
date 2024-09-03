@@ -4,6 +4,7 @@
   "suggest.preferCompleteThanJumpPlaceholder": true,
   "diagnostic.refreshOnInsertMode": true,
   "python.linting.ruffEnabled": true,
+  "python.linting.mypyEnabled": true,
   "python.formatting.provider": "ruff",
   "pyright.organizeimports.provider": "ruff",
   "eslint.enable": true,
