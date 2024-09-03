@@ -1,4 +1,5 @@
 {
+  "coc.preferences.formatOnSave": true,
   "suggest.noselect": true,
   "suggest.preferCompleteThanJumpPlaceholder": true,
   "diagnostic.refreshOnInsertMode": true,
