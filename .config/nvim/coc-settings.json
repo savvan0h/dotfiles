@@ -10,6 +10,7 @@
   "python.sortImports.args": ["--known-local-folder=apps"],
   "pyright.organizeimports.provider": "isort",
   "eslint.enable": true,
+  "eslint.autoFixOnSave": true,
   "prettier.prettierPath": "prettier",
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
   "typescript.preferences.quoteStyle": "single",
