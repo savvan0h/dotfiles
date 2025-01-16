@@ -306,6 +306,7 @@ rev = 'canary'
 hook_add = '''
 lua <<EOF
 require("CopilotChat").setup {
+  model = "o1-mini",
   debug = false,
   -- Inline chat
   window = {
