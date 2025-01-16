@@ -33,6 +33,7 @@ hook_add = '''
       \'coc-phpls',
       \'coc-pyright',
       \'coc-tsserver',
+      \'coc-pretty-ts-errors',
       \'coc-prettier',
       \'coc-yaml',
       \'coc-highlight'
