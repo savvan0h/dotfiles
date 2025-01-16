@@ -391,6 +391,7 @@ require'nvim-treesitter.configs'.setup {
     'vim',
     'vimdoc',
     'markdown',
+    'diff',
   },
   highlight = {
     enable = true,
