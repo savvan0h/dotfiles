@@ -390,6 +390,7 @@ require'nvim-treesitter.configs'.setup {
     'lua',
     'vim',
     'vimdoc',
+    'markdown',
   },
   highlight = {
     enable = true,
