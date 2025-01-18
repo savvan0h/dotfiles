@@ -33,5 +33,4 @@ ln -sf ~/dotfiles/.config/starship.toml ~/.config/starship.toml
 
 ln -sf ~/dotfiles/.tigrc ~/.tigrc
 
-ln -sf ~/dotfiles/.bashrc ~/.bashrc
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
