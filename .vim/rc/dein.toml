@@ -317,6 +317,9 @@ require("CopilotChat").setup {
     height = 0.4,
     row = 1
   },
+  question_header = '👤 ',
+  answer_header = '🤖 ',
+  error_header = '❌ ',
   prompts = {
     CommitStaged = {
       prompt = 'Generate a concise and meaningful commit message title based on the changes made. Make sure the title has maximum 50 characters. Do not put quotes around the title. Focus solely on creating the title, not the full commit message body.',
