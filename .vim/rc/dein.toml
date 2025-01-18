@@ -295,7 +295,17 @@ hook_add = '''
       \ 'TelescopePrompt': v:false
       \ }
 
-  "Keybindings
+  " Set workspace folder to git root of current file
+  function! SetCopilotWorkspaceFolder()
+    let l:git_root = system('git -C ' . expand('%:p:h') . ' rev-parse --show-toplevel')
+    let l:git_root = substitute(l:git_root, '\n\+$', '', '')
+    if v:shell_error == 0 && l:git_root != ""
+        let g:copilot_workspace_folders = [l:git_root]
+    endif
+  endfunction
+  autocmd VimEnter * call SetCopilotWorkspaceFolder()
+
+  " Keybindings
   inoremap <silent> <C-j> <Plug>(copilot-next)
   inoremap <silent> <C-k> <Plug>(copilot-previous)
 '''
