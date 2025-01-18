@@ -9,7 +9,7 @@ charging_symbol = "⚡️"
 discharging_symbol = "💀"
 
 [aws]
-format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
+format = '\[[$symbol($profile)(\[$duration\])]($style)\]'
 
 [bun]
 format = '\[[$symbol($version)]($style)\]'
