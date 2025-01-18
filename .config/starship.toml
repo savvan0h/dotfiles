@@ -148,3 +148,7 @@ symbol = "🅢 "
 
 [gcloud]
 disabled = true
+
+[kubernetes]
+format = 'on [⛵ $context](dimmed green) '
+disabled = false
