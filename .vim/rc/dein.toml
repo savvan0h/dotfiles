@@ -251,6 +251,13 @@ repo = 'nvim-telescope/telescope.nvim'
 depends = ['plenary.nvim']
 hook_add = '''
 lua <<EOF
+require('telescope').setup{
+  pickers = {
+    find_files = {
+      find_command = {'rg', '--files', '--hidden', '-g', '!.git'},
+    },
+  },
+}
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
