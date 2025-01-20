@@ -256,6 +256,9 @@ require('telescope').setup{
     find_files = {
       find_command = {'rg', '--files', '--hidden', '-g', '!.git'},
     },
+    live_grep = {
+      additional_args = {'--fixed-strings'},
+    },
   },
 }
 local builtin = require('telescope.builtin')
