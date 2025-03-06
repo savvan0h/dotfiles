@@ -9,7 +9,6 @@
   "pyright.organizeimports.provider": "ruff",
   "eslint.enable": true,
   "eslint.autoFixOnSave": true,
-  "prettier.prettierPath": "prettier",
   "prettier.printWidth": 80,
   "prettier.semi": true,
   "prettier.singleQuote": true,
