@@ -18,6 +18,7 @@
   "prettier.useTabs": false,
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
   "typescript.preferences.quoteStyle": "single",
+  "typescript.suggest.autoImports": true,
   "java.jdt.ls.java.home": "/Library/Java/JavaVirtualMachines/adoptopenjdk-14.jdk/Contents/Home/",
   "java.configuration.runtimes": [
     {
