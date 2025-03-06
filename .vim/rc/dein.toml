@@ -351,6 +351,7 @@ hook_add = '''
 lua <<EOF
 require("CopilotChat").setup {
   model = "o1-mini",
+  agent = "copilot",
   debug = false,
   -- Inline chat
   window = {
