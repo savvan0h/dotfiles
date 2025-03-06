@@ -6,6 +6,10 @@
   "python.linting.ruffEnabled": true,
   "python.linting.mypyEnabled": true,
   "python.formatting.provider": "ruff",
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportCallIssue": "warning",
+    "reportArgumentType": "warning"
+  },
   "pyright.organizeimports.provider": "ruff",
   "eslint.enable": true,
   "eslint.autoFixOnSave": true,
