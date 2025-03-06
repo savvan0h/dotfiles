@@ -9,6 +9,7 @@
   "pyright.organizeimports.provider": "ruff",
   "eslint.enable": true,
   "eslint.autoFixOnSave": true,
+  "prettier.disableLanguages": ["markdown"],
   "prettier.printWidth": 80,
   "prettier.semi": true,
   "prettier.singleQuote": true,
