@@ -594,6 +594,11 @@ require('avante').setup({
   copilot = {
     model = 'claude-3.7-sonnet',
   },
+  mappings = {
+    sidebar = {
+      close = {},
+    },
+  },
   windows = {
     width = 50,
     sidebar_header = {
