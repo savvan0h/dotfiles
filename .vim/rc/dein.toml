@@ -357,7 +357,7 @@ require("CopilotChat").setup {
   window = {
     layout = 'float',
     relative = 'cursor',
-    width = 1,
+    width = 0.8,
     height = 0.4,
     row = 1
   },
