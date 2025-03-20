@@ -572,6 +572,9 @@ repo = 'MeanderingProgrammer/render-markdown.nvim'
 on_ft = ['markdown', 'Avante']
 
 [[plugins]]
+repo = 'nvim-tree/nvim-web-devicons'
+
+[[plugins]]
 repo = 'yetone/avante.nvim'
 depends = [
   'nvim-treesitter',
@@ -579,6 +582,7 @@ depends = [
   'plenary.nvim',
   'nui.nvim',
   'render-markdown.nvim',
+  'nvim-web-devicons',
   'copilot.vim',
 ]
 branch = 'main'
