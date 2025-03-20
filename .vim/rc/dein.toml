@@ -357,6 +357,7 @@ require("CopilotChat").setup {
     height = 0.4,
     row = 1
   },
+  auto_insert_mode = false,
   question_header = '👤 ',
   answer_header = '🤖 ',
   error_header = '❌ ',
