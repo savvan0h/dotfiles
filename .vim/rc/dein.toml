@@ -269,8 +269,7 @@ repo = 'nvim-lua/plenary.nvim'
 [[plugins]]
 repo = 'nvim-telescope/telescope.nvim'
 depends = ['plenary.nvim']
-hook_add = '''
-lua <<EOF
+lua_add = '''
 require('telescope').setup{
   pickers = {
     find_files = {
@@ -286,7 +285,6 @@ vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find f
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
-EOF
 '''
 
 [[plugins]]
@@ -343,8 +341,7 @@ require("copilot").setup({
 repo = 'CopilotC-Nvim/CopilotChat.nvim'
 depends = ['copilot.lua', 'plenary.nvim']
 branch = 'main'
-hook_add = '''
-lua <<EOF
+lua_add = '''
 require("CopilotChat").setup {
   model = "claude-3.7-sonnet",
   agent = "copilot",
@@ -367,7 +364,6 @@ require("CopilotChat").setup {
     },
   }
 }
-EOF
 '''
 
 [[plugins]]
@@ -384,21 +380,18 @@ repo = 'MunifTanjim/nui.nvim'
 
 [[plugins]]
 repo = 'rcarriga/nvim-notify'
-hook_add = '''
-lua <<EOF
+lua_add = '''
 require'notify'.setup {
   render = 'wrapped-compact',
   max_width = 60,
   stages = 'slide',
 }
-EOF
 '''
 
 [[plugins]]
 repo = 'folke/noice.nvim'
 depends = ['nui.nvim', 'nvim-notify']
-hook_add = '''
-lua <<EOF
+lua_add = '''
 require'noice'.setup {
   presets = {
     command_palette = true,
@@ -414,15 +407,13 @@ require'noice'.setup {
     },
   },
 }
-EOF
 '''
 
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'
 if = 'has("nvim")'
 hook_post_update = 'TSUpdate'
-hook_source = '''
-lua <<EOF
+lua_source = '''
 require'nvim-treesitter.configs'.setup {
   ensure_installed = {
     'java',
@@ -444,7 +435,6 @@ require'nvim-treesitter.configs'.setup {
     disable = {},
   },
 }
-EOF
 '''
 
 [[plugins]]
@@ -456,8 +446,7 @@ repo = 'nvim-neotest/nvim-nio'
 [[plugins]]
 repo = 'rcarriga/nvim-dap-ui'
 depends = ['nvim-dap', 'nvim-nio']
-hook_source = '''
-lua <<EOF
+lua_source = '''
 -- Configure layout
 require('dapui').setup({
   layouts = {
@@ -495,23 +484,19 @@ end
 dap.listeners.before.event_exited.dapui_config = function()
   dapui.close()
 end
-EOF
 '''
 
 [[plugins]]
 repo = 'theHamsta/nvim-dap-virtual-text'
 depends = ['nvim-dap', 'nvim-treesitter']
-hook_source = '''
-lua <<EOF
+lua_source = '''
 require('nvim-dap-virtual-text').setup()
-EOF
 '''
 
 [[plugins]]
 repo = 'mfussenegger/nvim-dap-python'
 depends = ['nvim-dap']
-hook_add = '''
-lua <<EOF
+lua_add = '''
 require('dap-python').setup('python')
 -- Set up remote python debugging
 table.insert(require('dap').configurations.python, {
@@ -558,7 +543,6 @@ vim.keymap.set('n', '<Leader>ds', function()
   local widgets = require('dap.ui.widgets')
   widgets.centered_float(widgets.scopes)
 end)
-EOF
 '''
 
 [[plugins]]
@@ -584,8 +568,7 @@ depends = [
 ]
 branch = 'main'
 build = 'make'
-hook_add = '''
-lua <<EOF
+lua_add = '''
 require('avante').setup({
   provider = 'copilot',
   copilot = {
@@ -603,5 +586,4 @@ require('avante').setup({
     }
   }
 })
-EOF
 '''
