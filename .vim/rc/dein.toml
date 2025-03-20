@@ -350,7 +350,7 @@ branch = 'main'
 hook_add = '''
 lua <<EOF
 require("CopilotChat").setup {
-  model = "o1-mini",
+  model = "claude-3.7-sonnet",
   agent = "copilot",
   debug = false,
   -- Inline chat
