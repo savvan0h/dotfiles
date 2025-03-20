@@ -270,7 +270,7 @@ repo = 'nvim-lua/plenary.nvim'
 repo = 'nvim-telescope/telescope.nvim'
 depends = ['plenary.nvim']
 lua_add = '''
-require('telescope').setup{
+require('telescope').setup({
   pickers = {
     find_files = {
       find_command = {'rg', '--files', '--hidden', '-g', '!.git'},
@@ -279,7 +279,7 @@ require('telescope').setup{
       additional_args = {'--fixed-strings'},
     },
   },
-}
+})
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
@@ -342,7 +342,7 @@ repo = 'CopilotC-Nvim/CopilotChat.nvim'
 depends = ['copilot.lua', 'plenary.nvim']
 branch = 'main'
 lua_add = '''
-require("CopilotChat").setup {
+require("CopilotChat").setup({
   model = "claude-3.7-sonnet",
   agent = "copilot",
   debug = false,
@@ -363,7 +363,7 @@ require("CopilotChat").setup {
       prompt = 'Generate a concise and meaningful commit message title based on the changes made. Make sure the title has maximum 50 characters. Do not put quotes around the title. Focus solely on creating the title, not the full commit message body.',
     },
   }
-}
+})
 '''
 
 [[plugins]]
@@ -381,18 +381,18 @@ repo = 'MunifTanjim/nui.nvim'
 [[plugins]]
 repo = 'rcarriga/nvim-notify'
 lua_add = '''
-require'notify'.setup {
+require('notify').setup({
   render = 'wrapped-compact',
   max_width = 60,
   stages = 'slide',
-}
+})
 '''
 
 [[plugins]]
 repo = 'folke/noice.nvim'
 depends = ['nui.nvim', 'nvim-notify']
 lua_add = '''
-require'noice'.setup {
+require('noice').setup({
   presets = {
     command_palette = true,
   },
@@ -406,7 +406,7 @@ require'noice'.setup {
       opts = { skip = true },
     },
   },
-}
+})
 '''
 
 [[plugins]]
@@ -414,7 +414,7 @@ repo = 'nvim-treesitter/nvim-treesitter'
 if = 'has("nvim")'
 hook_post_update = 'TSUpdate'
 lua_source = '''
-require'nvim-treesitter.configs'.setup {
+require('nvim-treesitter.configs').setup({
   ensure_installed = {
     'java',
     'php',
@@ -434,7 +434,7 @@ require'nvim-treesitter.configs'.setup {
     enable = true,
     disable = {},
   },
-}
+})
 '''
 
 [[plugins]]
