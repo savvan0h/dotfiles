@@ -320,13 +320,13 @@ repo = 'zbirenbaum/copilot.lua'
 on_cmd = ['Copilot']
 on_event = ['InsertEnter']
 lua_add = '''
-require("copilot").setup({
+require('copilot').setup({
   suggestion = {
     auto_trigger = true,
     keymap = {
-      accept = "<Tab>",
-      next = "<C-j>",
-      prev = "<C-k>",
+      accept = '<Tab>',
+      next = '<C-j>',
+      prev = '<C-k>',
     },
   },
   filetypes = {
@@ -342,9 +342,9 @@ repo = 'CopilotC-Nvim/CopilotChat.nvim'
 depends = ['copilot.lua', 'plenary.nvim']
 branch = 'main'
 lua_add = '''
-require("CopilotChat").setup({
-  model = "claude-3.7-sonnet",
-  agent = "copilot",
+require('CopilotChat').setup({
+  model = 'claude-3.7-sonnet',
+  agent = 'copilot',
   debug = false,
   -- Inline chat
   window = {
@@ -399,9 +399,9 @@ require('noice').setup({
   routes = {
     {
       filter = {
-        event = "msg_show",
-        kind = "",
-        find = "written",
+        event = 'msg_show',
+        kind = '',
+        find = 'written',
       },
       opts = { skip = true },
     },
@@ -452,26 +452,26 @@ require('dapui').setup({
   layouts = {
     {
       elements = {
-        { id = "watches", size = 0.20 },
-        { id = "stacks", size = 0.20 },
-        { id = "breakpoints", size = 0.20 },
-        { id = "scopes", size = 0.40 }
+        { id = 'watches', size = 0.20 },
+        { id = 'stacks', size = 0.20 },
+        { id = 'breakpoints', size = 0.20 },
+        { id = 'scopes', size = 0.40 }
       },
-      position = "right",
+      position = 'right',
       size = 40
     },
     {
       elements = {
-        { id = "console", size = 0.5 },
-        { id = "repl", size = 0.5 }
+        { id = 'console', size = 0.5 },
+        { id = 'repl', size = 0.5 }
       },
-      position = "bottom",
+      position = 'bottom',
       size = 10
     }
   },
 })
 -- Open and close the windows automatically
-local dap, dapui = require("dap"), require("dapui")
+local dap, dapui = require('dap'), require('dapui')
 dap.listeners.before.attach.dapui_config = function()
   dapui.open()
 end
@@ -504,16 +504,16 @@ table.insert(require('dap').configurations.python, {
   request = 'attach',
   name = 'Remote Python Debugger',
   port = 5678,
-  host = "127.0.0.1",
-  mode = "remote",
+  host = '127.0.0.1',
+  mode = 'remote',
   cwd = vim.fn.getcwd(),
   pathMappings = {
     {
       localRoot = function()
-        return vim.fn.input("Local directory > ", vim.fn.getcwd() .. "/backend", "file")
+        return vim.fn.input('Local directory > ', vim.fn.getcwd() .. '/backend', 'file')
       end,
       remoteRoot = function()
-        return vim.fn.input("Container directory > ", "/app", "file")
+        return vim.fn.input('Container directory > ', '/app', 'file')
       end,
     },
   },
