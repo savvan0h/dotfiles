@@ -563,3 +563,36 @@ vim.keymap.set('n', '<Leader>ds', function()
 end)
 EOF
 '''
+
+[[plugins]]
+repo = 'stevearc/dressing.nvim'
+
+[[plugins]]
+repo = 'MeanderingProgrammer/render-markdown.nvim'
+on_ft = ['markdown', 'Avante']
+
+[[plugins]]
+repo = 'yetone/avante.nvim'
+depends = [
+  'nvim-treesitter',
+  'dressing.nvim',
+  'plenary.nvim',
+  'nui.nvim',
+  'render-markdown.nvim',
+  'copilot.vim',
+]
+branch = 'main'
+build = 'make'
+hook_add = '''
+lua <<EOF
+require('avante').setup({
+  provider = 'copilot',
+  copilot = {
+    model = 'claude-3.7-sonnet',
+  },
+  windows = {
+    width = 50,
+  }
+})
+EOF
+'''
