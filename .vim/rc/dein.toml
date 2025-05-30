@@ -343,7 +343,7 @@ depends = ['copilot.lua', 'plenary.nvim']
 branch = 'main'
 lua_add = '''
 require('CopilotChat').setup({
-  model = 'claude-3.7-sonnet',
+  model = 'claude-sonnet-4',
   agent = 'copilot',
   debug = false,
   -- Inline chat
@@ -572,7 +572,7 @@ lua_add = '''
 require('avante').setup({
   provider = 'copilot',
   copilot = {
-    model = 'claude-3.7-sonnet',
+    model = 'claude-sonnet-4',
   },
   mappings = {
     sidebar = {
