@@ -550,11 +550,10 @@ repo = 'stevearc/dressing.nvim'
 
 [[plugins]]
 repo = 'MeanderingProgrammer/render-markdown.nvim'
-on_ft = ['markdown', 'Avante']
+on_ft = ['Avante']
 lua_add = '''
 require('render-markdown').setup({
   file_types = {
-    'markdown',
     'Avante',
   },
 })
