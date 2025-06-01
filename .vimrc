@@ -78,6 +78,10 @@ noremap <f10> :rightbelow sp \| resize 10 \| term<CR>
 tnoremap <Esc> <C-\><C-n>
 " remove number column in terminal mode
 autocmd TermOpen * setlocal nonumber norelativenumber
+" highlight terminal colors
+highlight TerminalNormal guibg=#1e1e2e guifg=#cdd6f4 ctermbg=234 ctermfg=255
+highlight TerminalNormalNC guibg=#181825 guifg=#9399b2 ctermbg=235 ctermfg=245
+autocmd TermOpen * setlocal winhighlight=Normal:TerminalNormal,NormalNC:TerminalNormalNC
 
 " key mappings for moving between windows
 noremap <Space>j <C-W>j
