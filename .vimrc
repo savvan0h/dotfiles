@@ -76,6 +76,8 @@ syntax on
 noremap <f10> :rightbelow sp \| resize 10 \| term<CR>
 " change to Terminal-Normal with ESC
 tnoremap <Esc> <C-\><C-n>
+" remove number column in terminal mode
+autocmd TermOpen * setlocal nonumber norelativenumber
 
 " key mappings for moving between windows
 noremap <Space>j <C-W>j
