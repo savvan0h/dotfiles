@@ -575,7 +575,8 @@ depends = [
 ]
 branch = 'main'
 build = 'make'
-lua_add = '''
+on_source = ['avante.nvim']
+lua_source = '''
 require('avante').setup({
   provider = 'copilot',
   copilot = {
