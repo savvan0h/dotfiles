@@ -589,9 +589,6 @@ require('avante').setup({
   },
   windows = {
     width = 50,
-    sidebar_header = {
-      rounded = false,
-    }
   }
 })
 '''
