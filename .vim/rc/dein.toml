@@ -314,30 +314,34 @@ repo = 'wesQ3/vim-windowswap'
 repo = 'thinca/vim-visualstar'
 
 [[plugins]]
-repo = 'zbirenbaum/copilot.lua'
-on_cmd = ['Copilot']
-on_event = ['InsertEnter']
-lua_add = '''
-require('copilot').setup({
-  suggestion = {
-    auto_trigger = true,
-    keymap = {
-      accept = '<Tab>',
-      next = '<C-j>',
-      prev = '<C-k>',
-    },
-  },
-  filetypes = {
-    yaml = true,
-    markdown = true,
-    gitcommit = true,
-  },
-})
+repo = 'github/copilot.vim'
+hook_add = '''
+  let g:copilot_filetypes = {
+      \ 'gitcommit': v:true,
+      \ 'markdown': v:true,
+      \ 'yaml': v:true,
+      \ 'TelescopeResults': v:false,
+      \ 'TelescopePrompt': v:false
+      \ }
+
+  " Set workspace folder to git root of current file
+  function! SetCopilotWorkspaceFolder()
+    let l:git_root = system('git -C ' . expand('%:p:h') . ' rev-parse --show-toplevel')
+    let l:git_root = substitute(l:git_root, '\n\+$', '', '')
+    if v:shell_error == 0 && l:git_root != ""
+        let g:copilot_workspace_folders = [l:git_root]
+    endif
+  endfunction
+  autocmd VimEnter * call SetCopilotWorkspaceFolder()
+
+  " Keybindings
+  inoremap <silent> <C-j> <Plug>(copilot-next)
+  inoremap <silent> <C-k> <Plug>(copilot-previous)
 '''
 
 [[plugins]]
 repo = 'CopilotC-Nvim/CopilotChat.nvim'
-depends = ['copilot.lua', 'plenary.nvim']
+depends = ['copilot.vim', 'plenary.nvim']
 branch = 'main'
 lua_add = '''
 require('CopilotChat').setup({
@@ -569,7 +573,7 @@ depends = [
   'nui.nvim',
   'render-markdown.nvim',
   'nvim-web-devicons',
-  'copilot.lua',
+  'copilot.vim',
 ]
 branch = 'main'
 build = 'make'
