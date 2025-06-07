@@ -29,7 +29,6 @@ hook_add = '''
       \'coc-html',
       \'coc-java',
       \'coc-json',
-      \'coc-pairs',
       \'coc-phpls',
       \'coc-pyright',
       \'coc-tsserver',
