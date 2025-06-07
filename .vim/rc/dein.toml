@@ -34,8 +34,7 @@ hook_add = '''
       \'coc-tsserver',
       \'coc-pretty-ts-errors',
       \'coc-prettier',
-      \'coc-yaml',
-      \'coc-highlight'
+      \'coc-yaml'
       \]
 
   " Don't pass messages to |ins-completion-menu|.
