@@ -371,6 +371,7 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     branch = "master",
+    lazy = false, -- Lazy loading is not supported
     build = ":TSUpdate",
     cond = function()
       return vim.fn.has("nvim") == 1
