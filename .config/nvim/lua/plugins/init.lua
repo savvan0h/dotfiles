@@ -370,6 +370,7 @@ return {
   -- Treesitter
   {
     "nvim-treesitter/nvim-treesitter",
+    branch = "master",
     build = ":TSUpdate",
     cond = function()
       return vim.fn.has("nvim") == 1
