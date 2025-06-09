@@ -337,11 +337,6 @@ return {
     "rcarriga/nvim-notify",
     event = "VeryLazy",
     config = function()
-      require("notify").setup({
-        render = "wrapped-compact",
-        max_width = 60,
-        stages = "slide",
-      })
       vim.opt.termguicolors = true
     end,
   },
