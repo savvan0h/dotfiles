@@ -287,7 +287,6 @@ return {
 
   -- Various utilities
   "rhysd/clever-f.vim",
-  "lambdalisue/pastefix.vim",
   "HerringtonDarkholme/yats.vim",
   "thinca/vim-visualstar",
 
