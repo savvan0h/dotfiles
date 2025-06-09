@@ -276,18 +276,16 @@ return {
       { "<leader>fb", function() require("telescope.builtin").buffers() end, desc = "Telescope buffers" },
       { "<leader>fh", function() require("telescope.builtin").help_tags() end, desc = "Telescope help tags" },
     },
-    config = function()
-      require("telescope").setup({
-        pickers = {
-          find_files = {
-            find_command = {"rg", "--files", "--hidden", "-g", "!.git"},
-          },
-          live_grep = {
-            additional_args = {"--fixed-strings"},
-          },
+    opts = {
+      pickers = {
+        find_files = {
+          find_command = {"rg", "--files", "--hidden", "-g", "!.git"},
         },
-      })
-    end,
+        live_grep = {
+          additional_args = {"--fixed-strings"},
+        },
+      },
+    },
   },
 
   -- Rooter
@@ -346,25 +344,23 @@ return {
   -- Noice UI
   {
     "folke/noice.nvim",
-    event = "VeryLazy",
     dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
-    config = function()
-      require("noice").setup({
-        presets = {
-          command_palette = true,
-        },
-        routes = {
-          {
-            filter = {
-              event = "msg_show",
-              kind = "",
-              find = "written",
-            },
-            opts = { skip = true },
+    event = "VeryLazy",
+    opts = {
+      presets = {
+        command_palette = true,
+      },
+      routes = {
+        {
+          filter = {
+            event = "msg_show",
+            kind = "",
+            find = "written",
           },
+          opts = { skip = true },
         },
-      })
-    end,
+      },
+    },
   },
 
   -- Treesitter
@@ -377,6 +373,7 @@ return {
       return vim.fn.has("nvim") == 1
     end,
     config = function()
+      -- See https://github.com/nvim-treesitter/nvim-treesitter/discussions/7535
       require("nvim-treesitter.configs").setup({
         ensure_installed = {
           "java",
@@ -546,34 +543,32 @@ return {
     "CopilotC-Nvim/CopilotChat.nvim",
     dependencies = { "github/copilot.vim", "nvim-lua/plenary.nvim" },
     branch = "main",
-    config = function()
-      require("CopilotChat").setup({
-        model = "claude-sonnet-4",
-        agent = "copilot",
-        debug = false,
-        window = {
-          layout = "float",
-          relative = "cursor",
-          width = 0.8,
-          height = 0.4,
-          row = 1,
+    opts = {
+      model = "claude-sonnet-4",
+      agent = "copilot",
+      debug = false,
+      window = {
+        layout = "float",
+        relative = "cursor",
+        width = 0.8,
+        height = 0.4,
+        row = 1,
+      },
+      auto_insert_mode = false,
+      question_header = "👤 ",
+      answer_header = "🤖 ",
+      error_header = "❌ ",
+      prompts = {
+        Docs = {
+          prompt = "/COPILOT_GENERATE Please add documentation comment for the selection. If the selection is Python code, use Google Style docstrings.",
         },
-        auto_insert_mode = false,
-        question_header = "👤 ",
-        answer_header = "🤖 ",
-        error_header = "❌ ",
-        prompts = {
-          Docs = {
-            prompt = "/COPILOT_GENERATE Please add documentation comment for the selection. If the selection is Python code, use Google Style docstrings.",
-          },
+      },
+      mappings = {
+        complete = {
+          insert = "<C-t>",
         },
-        mappings = {
-          complete = {
-            insert = "<C-t>",
-          },
-        },
-      })
-    end,
+      },
+    },
   },
 
   --- Avante
@@ -606,7 +601,7 @@ return {
       vim.api.nvim_set_hl(0, "AvanteSidebarWinSeparator", { link = "WinSeparator" })
       local normal_bg = string.format("#%06x", vim.api.nvim_get_hl(0, { name = "Normal" }).bg)
       vim.api.nvim_set_hl(0, "AvanteSidebarWinHorizontalSeparator", { fg = normal_bg })
-      -- TODO: Use opts
+      -- opts doesn't work for some reason
       require('avante').setup({
         provider = 'copilot',
         providers = {
