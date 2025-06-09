@@ -342,6 +342,7 @@ return {
         max_width = 60,
         stages = "slide",
       })
+      vim.opt.termguicolors = true
     end,
   },
 
