@@ -40,7 +40,6 @@ return {
   {
     "neoclide/coc.nvim",
     branch = "release",
-    event = "InsertEnter",
     config = function()
       vim.opt.updatetime = 100
       vim.g.coc_global_extensions = {
