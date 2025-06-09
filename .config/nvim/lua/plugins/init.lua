@@ -17,6 +17,7 @@ return {
   -- Window management
   {
     "simeji/winresizer",
+    keys = "<C-T>",
     init = function()
       vim.g.winresizer_start_key = "<C-T>"
     end,
@@ -25,10 +26,13 @@ return {
   -- File explorer
   {
     "scrooloose/nerdtree",
+    cmd = { "NERDTree", "NERDTreeToggle", "NERDTreeFind" },
+    keys = {
+      { "<C-e>", ":NERDTreeToggle<CR>", desc = "Toggle NERDTree", silent = true }
+    },
     config = function()
       vim.g.NERDTreeShowHidden = 1
       vim.g.NERDTreeWinSize = 28
-      vim.keymap.set("n", "<C-e>", ":NERDTreeToggle<CR>", { silent = true })
     end,
   },
 
@@ -188,15 +192,17 @@ return {
   -- Browser integration
   {
     "tyru/open-browser.vim",
-    config = function()
-      vim.keymap.set({"n", "v"}, "gx", "<Plug>(openbrowser-smart-search)")
-    end,
+    keys = {
+      { "gx", "<Plug>(openbrowser-smart-search)", mode = {"n", "v"}, desc = "Open browser" }
+    },
   },
 
   -- Markdown
   --- Table mode
   {
     "dhruvasagar/vim-table-mode",
+    ft = { "markdown" },
+    cmd = { "TableModeToggle", "TableModeEnable", "TableModeDisable" },
     config = function()
       vim.g.table_mode_corner = "|"
     end,
@@ -251,13 +257,26 @@ return {
   "vim-airline/vim-airline-themes",
 
   -- Git integration
-  "airblade/vim-gitgutter",
-  "tpope/vim-fugitive",
+  {
+    "airblade/vim-gitgutter",
+    event = { "BufReadPre", "BufNewFile" },
+  },
+  {
+    "tpope/vim-fugitive",
+    cmd = { "Git" },
+  },
 
   -- Telescope
   {
     "nvim-telescope/telescope.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
+    cmd = "Telescope",
+    keys = {
+      { "<leader>ff", function() require("telescope.builtin").find_files() end, desc = "Telescope find files" },
+      { "<leader>fg", function() require("telescope.builtin").live_grep() end, desc = "Telescope live grep" },
+      { "<leader>fb", function() require("telescope.builtin").buffers() end, desc = "Telescope buffers" },
+      { "<leader>fh", function() require("telescope.builtin").help_tags() end, desc = "Telescope help tags" },
+    },
     config = function()
       require("telescope").setup({
         pickers = {
@@ -269,11 +288,6 @@ return {
           },
         },
       })
-      local builtin = require("telescope.builtin")
-      vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
-      vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
-      vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
-      vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
     end,
   },
 
@@ -286,16 +300,29 @@ return {
   },
 
   -- Various utilities
-  "rhysd/clever-f.vim",
-  "HerringtonDarkholme/yats.vim",
-  "thinca/vim-visualstar",
+  {
+    "rhysd/clever-f.vim",
+    keys = { "f", "F", "t", "T" },
+  },
+  {
+    "HerringtonDarkholme/yats.vim",
+    ft = { "typescript", "typescriptreact" },
+  },
+  {
+    "thinca/vim-visualstar",
+    keys = { "*", "#" },
+  },
 
-  -- Icons and UI
-  "ryanoasis/vim-devicons",
+  -- Icons and UI (for NERDTree, vim-airline, etc.)
+  {
+    "ryanoasis/vim-devicons",
+    event = "VeryLazy",
+  },
 
   -- Whitespace
   {
     "ntpeters/vim-better-whitespace",
+    event = { "BufReadPre", "BufNewFile" },
     config = function()
       vim.api.nvim_create_autocmd("TermOpen", {
         callback = function()
@@ -308,6 +335,7 @@ return {
   -- Notification system
   {
     "rcarriga/nvim-notify",
+    event = "VeryLazy",
     config = function()
       require("notify").setup({
         render = "wrapped-compact",
@@ -320,6 +348,7 @@ return {
   -- Noice UI
   {
     "folke/noice.nvim",
+    event = "VeryLazy",
     dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
     config = function()
       require("noice").setup({
@@ -375,6 +404,16 @@ return {
   -- Debug Adapter Protocol
   {
     "mfussenegger/nvim-dap",
+    keys = {
+      { "<F5>", function() require("dap").continue() end, desc = "DAP Continue" },
+      { "<F6>", function() require("dap").step_over() end, desc = "DAP Step Over" },
+      { "<F7>", function() require("dap").step_into() end, desc = "DAP Step Into" },
+      { "<F8>", function() require("dap").step_out() end, desc = "DAP Step Out" },
+      { "<Leader>b", function() require("dap").toggle_breakpoint() end, desc = "DAP Toggle Breakpoint" },
+      { "<Leader>B", function() require("dap").set_breakpoint() end, desc = "DAP Set Breakpoint" },
+      { "<Leader>dr", function() require("dap").repl.open() end, desc = "DAP Open REPL" },
+      { "<Leader>dl", function() require("dap").run_last() end, desc = "DAP Run Last" },
+    },
     dependencies = {
       "nvim-neotest/nvim-nio",
       "rcarriga/nvim-dap-ui",
@@ -448,16 +487,8 @@ return {
         },
       })
 
-      -- Key mappings
-      vim.keymap.set("n", "<F5>", function() dap.continue() end)
-      vim.keymap.set("n", "<F6>", function() dap.step_over() end)
-      vim.keymap.set("n", "<F7>", function() dap.step_into() end)
-      vim.keymap.set("n", "<F8>", function() dap.step_out() end)
-      vim.keymap.set("n", "<Leader>b", function() dap.toggle_breakpoint() end)
-      vim.keymap.set("n", "<Leader>B", function() dap.set_breakpoint() end)
+      -- Additional key mappings
       vim.keymap.set("n", "<Leader>lp", function() dap.set_breakpoint(nil, nil, vim.fn.input("Log point message: ")) end)
-      vim.keymap.set("n", "<Leader>dr", function() dap.repl.open() end)
-      vim.keymap.set("n", "<Leader>dl", function() dap.run_last() end)
       vim.keymap.set({"n", "v"}, "<Leader>dh", function()
         require("dap.ui.widgets").hover()
       end)
@@ -479,6 +510,7 @@ return {
   --- Copilot
   {
     "github/copilot.vim",
+    event = "InsertEnter",
     config = function()
       vim.g.copilot_filetypes = {
         gitcommit = true,
