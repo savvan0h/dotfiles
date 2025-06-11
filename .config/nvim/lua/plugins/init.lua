@@ -324,22 +324,18 @@ return {
     end,
   },
 
-  -- Notification system
-  {
-    "rcarriga/nvim-notify",
-    event = "VeryLazy",
-    opts = {
-      background_colour = "#000000",
-    },
-    config = function()
-      vim.opt.termguicolors = true
-    end,
-  },
-
   -- Noice UI
   {
     "folke/noice.nvim",
-    dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      {
+        "rcarriga/nvim-notify",
+        opts = {
+          background_colour = "#000000",
+        },
+      },
+    },
     event = "VeryLazy",
     opts = {
       presets = {
