@@ -1,16 +1,11 @@
 return {
   -- Colorscheme
   {
-    "morhetz/gruvbox",
-    lazy = false,
+    "ellisonleao/gruvbox.nvim",
     priority = 1000,
     config = function()
-      vim.cmd([[
-        colorscheme gruvbox
-        set background=dark
-        set t_Co=256
-        let g:ligthline = { 'colorscheme': 'gruvbox' }
-      ]])
+      vim.o.background = "dark" -- or "light" for light mode
+      vim.cmd([[colorscheme gruvbox]])
     end,
   },
 
