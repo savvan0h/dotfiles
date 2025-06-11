@@ -581,7 +581,7 @@ return {
       vim.api.nvim_set_hl(0, "AvanteSidebarNormal", { link = "Normal" })
       vim.api.nvim_set_hl(0, "AvanteSidebarWinSeparator", { link = "WinSeparator" })
       local normal_bg = string.format("#%06x", vim.api.nvim_get_hl(0, { name = "Normal" }).bg)
-      vim.api.nvim_set_hl(0, "AvanteSidebarWinHorizontalSeparator", { fg = normal_bg })
+      vim.api.nvim_set_hl(0, "AvanteSidebarWinHorizontalSeparator", { fg = normal_bg, bg = normal_bg })
       -- opts doesn't work for some reason
       require('avante').setup({
         provider = 'copilot',
