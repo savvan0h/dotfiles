@@ -54,7 +54,6 @@ return {
         },
       },
     },
-    event = "VeryLazy",
     opts = {
       presets = {
         command_palette = true,
