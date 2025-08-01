@@ -24,7 +24,7 @@ return {
           find_command = {"rg", "--files", "--hidden", "-g", "!.git"},
         },
         live_grep = {
-          additional_args = {"--fixed-strings"},
+          additional_args = {"--fixed-strings", "--hidden", "-g", "!.git"},
         },
       },
     },
