@@ -56,7 +56,7 @@ function peco-ssh() {
 alias s='peco-ssh'
 
 eval "$(starship init zsh)"
-alias ls='exa -la -s modified --time-style long-iso'
+alias ls='eza -la -s modified --time-style long-iso'
 alias cat='bat'
 alias git-root='cd $(git rev-parse --show-cdup)'
 
