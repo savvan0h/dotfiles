@@ -17,7 +17,8 @@ return {
         "coc-tsserver",
         "coc-pretty-ts-errors",
         "coc-prettier",
-        "coc-yaml"
+        "coc-yaml",
+        "coc-lua",
       }
 
       -- Don't pass messages to |ins-completion-menu|.
