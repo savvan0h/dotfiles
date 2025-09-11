@@ -6,6 +6,10 @@ return {
   },
   {
     "tpope/vim-fugitive",
-    cmd = { "Git", "Gdiffsplit" }
+    cmd = { "Git", "Gdiffsplit" },
+    config = function()
+      -- Force vertical diff
+      vim.opt.diffopt = vim.opt.diffopt + "vertical"
+    end
   },
 }
