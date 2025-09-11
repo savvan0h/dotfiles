@@ -3,14 +3,14 @@ return {
   {
     "mfussenegger/nvim-dap",
     keys = {
-      { "<F5>", function() require("dap").continue() end, desc = "DAP Continue" },
-      { "<F6>", function() require("dap").step_over() end, desc = "DAP Step Over" },
-      { "<F7>", function() require("dap").step_into() end, desc = "DAP Step Into" },
-      { "<F8>", function() require("dap").step_out() end, desc = "DAP Step Out" },
-      { "<Leader>b", function() require("dap").toggle_breakpoint() end, desc = "DAP Toggle Breakpoint" },
-      { "<Leader>B", function() require("dap").set_breakpoint() end, desc = "DAP Set Breakpoint" },
-      { "<Leader>dr", function() require("dap").repl.open() end, desc = "DAP Open REPL" },
-      { "<Leader>dl", function() require("dap").run_last() end, desc = "DAP Run Last" },
+      { "<F5>",       function() require("dap").continue() end,          desc = "DAP Continue" },
+      { "<F6>",       function() require("dap").step_over() end,         desc = "DAP Step Over" },
+      { "<F7>",       function() require("dap").step_into() end,         desc = "DAP Step Into" },
+      { "<F8>",       function() require("dap").step_out() end,          desc = "DAP Step Out" },
+      { "<Leader>b",  function() require("dap").toggle_breakpoint() end, desc = "DAP Toggle Breakpoint" },
+      { "<Leader>B",  function() require("dap").set_breakpoint() end,    desc = "DAP Set Breakpoint" },
+      { "<Leader>dr", function() require("dap").repl.open() end,         desc = "DAP Open REPL" },
+      { "<Leader>dl", function() require("dap").run_last() end,          desc = "DAP Run Last" },
     },
     dependencies = {
       "nvim-neotest/nvim-nio",
@@ -27,10 +27,10 @@ return {
         layouts = {
           {
             elements = {
-              { id = "watches", size = 0.20 },
-              { id = "stacks", size = 0.20 },
+              { id = "watches",     size = 0.20 },
+              { id = "stacks",      size = 0.20 },
               { id = "breakpoints", size = 0.20 },
-              { id = "scopes", size = 0.40 },
+              { id = "scopes",      size = 0.40 },
             },
             position = "right",
             size = 40,
@@ -38,7 +38,7 @@ return {
           {
             elements = {
               { id = "console", size = 0.5 },
-              { id = "repl", size = 0.5 },
+              { id = "repl",    size = 0.5 },
             },
             position = "bottom",
             size = 10,
@@ -87,10 +87,10 @@ return {
 
       -- Additional key mappings
       vim.keymap.set("n", "<Leader>lp", function() dap.set_breakpoint(nil, nil, vim.fn.input("Log point message: ")) end)
-      vim.keymap.set({"n", "v"}, "<Leader>dh", function()
+      vim.keymap.set({ "n", "v" }, "<Leader>dh", function()
         require("dap.ui.widgets").hover()
       end)
-      vim.keymap.set({"n", "v"}, "<Leader>dp", function()
+      vim.keymap.set({ "n", "v" }, "<Leader>dp", function()
         require("dap.ui.widgets").preview()
       end)
       vim.keymap.set("n", "<Leader>df", function()
@@ -104,4 +104,3 @@ return {
     end,
   },
 }
-

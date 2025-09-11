@@ -6,7 +6,7 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
-    build = "npm install -g mcp-hub@latest",  -- Installs `mcp-hub` node binary globally
+    build = "npm install -g mcp-hub@latest", -- Installs `mcp-hub` node binary globally
     config = function()
       require("mcphub").setup()
     end
@@ -30,7 +30,7 @@ return {
         local git_root = vim.fn.system("git -C " .. vim.fn.expand("%:p:h") .. " rev-parse --show-toplevel")
         git_root = vim.fn.substitute(git_root, "\\n\\+$", "", "")
         if vim.v.shell_error == 0 and git_root ~= "" then
-          vim.g.copilot_workspace_folders = {git_root}
+          vim.g.copilot_workspace_folders = { git_root }
         end
       end, {})
 
@@ -68,7 +68,8 @@ return {
       error_header = "❌ ",
       prompts = {
         Docs = {
-          prompt = "/COPILOT_GENERATE Please add documentation comment for the selection. If the selection is Python code, use Google Style docstrings.",
+          prompt =
+          "/COPILOT_GENERATE Please add documentation comment for the selection. If the selection is Python code, use Google Style docstrings.",
         },
       },
       mappings = {
@@ -91,9 +92,9 @@ return {
       "MunifTanjim/nui.nvim",
       --- The below dependencies are optional
       "nvim-telescope/telescope.nvim", -- for file_selector provider telescope
-      "stevearc/dressing.nvim", -- for input provider dressing
-      "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-      "github/copilot.vim", -- for providers='copilot'
+      "stevearc/dressing.nvim",        -- for input provider dressing
+      "nvim-tree/nvim-web-devicons",   -- or echasnovski/mini.icons
+      "github/copilot.vim",            -- for providers='copilot'
       {
         -- Make sure to set this up properly if you have lazy=true
         'MeanderingProgrammer/render-markdown.nvim',
@@ -120,7 +121,8 @@ return {
         mappings = {
           sidebar = {
             close = {},
-          }, },
+          },
+        },
         windows = {
           width = 50,
         },
