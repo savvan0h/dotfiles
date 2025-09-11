@@ -7,6 +7,14 @@ return {
     },
   },
 
+  -- Peek lines
+  {
+    'nacro90/numb.nvim',
+    config = function()
+      require('numb').setup()
+    end,
+  },
+
   -- Telescope
   {
     "nvim-telescope/telescope.nvim",
