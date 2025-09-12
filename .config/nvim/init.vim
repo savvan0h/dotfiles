@@ -14,7 +14,7 @@ set number
 set nobackup
 set nowritebackup
 set noswapfile
-set undodir=~/.vim/undodir
+set undodir=~/.local/share/nvim/undodir
 set undofile
 set fileencodings=utf-8,iso-2022-jp-3,iso-2022-jp,euc-jisx0213,euc-jp,ucs-bom,euc-jp,eucjp-ms,cp932
 set encoding=utf-8
