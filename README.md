@@ -1,7 +1,8 @@
 # dotfiles
 
 ## Requirements
-* Node.js
+
+- macOS
 
 ## Installation
 

@@ -17,6 +17,10 @@ brew bundle --file ./Brewfile
 
 # Install nvm(Homebrew installation is not supported)
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+# Install latest LTS Node.js
+source ~/.nvm/nvm.sh
+nvm install --lts
+nvm use --lts
 
 mkdir -p ~/.config/nvim
 ln -sf ~/dotfiles/.config/nvim ~/.config/nvim
