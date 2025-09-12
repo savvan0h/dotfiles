@@ -7,6 +7,6 @@
 
 ```
 $ cd ~
-$ git clone https://github.com/hiroki-sawano/dotfiles.git
+$ git clone https://github.com/savvan0h/dotfiles.git
 $ ~/dotfiles/setup.sh
 ```
