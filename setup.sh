@@ -22,6 +22,7 @@ source ~/.nvm/nvm.sh
 nvm install --lts
 nvm use --lts
 
+# Create symlinks for dotfiles
 mkdir -p ~/.config/nvim
 ln -sf ~/dotfiles/.config/nvim ~/.config/nvim
 ln -sf ~/dotfiles/.config/starship.toml ~/.config/starship.toml
