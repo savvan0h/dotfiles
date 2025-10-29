@@ -52,7 +52,7 @@ return {
     dependencies = { "github/copilot.vim", "nvim-lua/plenary.nvim" },
     branch = "main",
     opts = {
-      model = "claude-sonnet-4",
+      model = "claude-sonnet-4.5",
       agent = "copilot",
       debug = false,
       window = {
@@ -115,7 +115,7 @@ return {
         provider = 'copilot',
         providers = {
           copilot = {
-            model = 'claude-sonnet-4',
+            model = 'claude-sonnet-4.5',
           },
         },
         mappings = {
