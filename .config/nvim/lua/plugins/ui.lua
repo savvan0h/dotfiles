@@ -13,11 +13,20 @@ return {
     "scrooloose/nerdtree",
     cmd = { "NERDTree", "NERDTreeToggle", "NERDTreeFind" },
     keys = {
-      { "<C-e>", ":NERDTreeToggle<CR>", desc = "Toggle NERDTree", silent = true }
+      { "<C-e>", ":call MyNerdToggle()<CR>", desc = "Toggle NERDTree (find current file)", silent = true }
     },
     config = function()
       vim.g.NERDTreeShowHidden = 1
       vim.g.NERDTreeWinSize = 28
+      vim.cmd([[
+        function MyNerdToggle()
+          if &filetype == 'nerdtree' || exists("g:NERDTree") && g:NERDTree.IsOpen()
+            :NERDTreeToggle
+          else
+            :NERDTreeFind
+          endif
+        endfunction
+      ]])
     end,
   },
 
