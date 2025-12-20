@@ -50,7 +50,7 @@ return {
   {
     "CopilotC-Nvim/CopilotChat.nvim",
     dependencies = { "github/copilot.vim", "nvim-lua/plenary.nvim" },
-    branch = "main",
+    version = "v3.12.2",
     opts = {
       model = "claude-sonnet-4.5",
       agent = "copilot",
