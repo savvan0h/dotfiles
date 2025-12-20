@@ -91,4 +91,9 @@ return {
       vim.g.rooter_patterns = { ".git" }
     end,
   },
+
+  -- Auto read files changed outside of Neovim
+  {
+    "djoshea/vim-autoread",
+  }
 }
