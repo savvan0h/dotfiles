@@ -13,7 +13,7 @@ return {
   --- Preview
   {
     "previm/previm",
-    ft = "markdown",
+    ft = { "markdown", "asciidoc" },
     config = function()
       vim.g.previm_show_header = 0
       vim.g.previm_open_cmd = 'open -a "Google Chrome"'
