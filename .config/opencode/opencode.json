@@ -1,0 +1,17 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "keybinds": {
+    "input_move_left": "left",
+    "input_move_right": "right",
+    "messages_page_up": "pageup,ctrl+b",
+    "messages_page_down": "pagedown,ctrl+f",
+    "input_submit": "shift+return",
+    "input_newline": "return"
+  },
+  "mcp": {
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp"
+    }
+  }
+}
