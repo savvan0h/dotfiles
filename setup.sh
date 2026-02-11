@@ -24,8 +24,10 @@ nvm use --lts
 
 # Create symlinks for dotfiles
 mkdir -p ~/.config/nvim
+mkdir -p ~/.config/opencode
 ln -sf ~/dotfiles/.config/nvim ~/.config/nvim
 ln -sf ~/dotfiles/.config/starship.toml ~/.config/starship.toml
+ln -sf ~/dotfiles/.config/opencode/skills ~/.config/opencode/skills
 ln -sf ~/dotfiles/.tigrc ~/.tigrc
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
 ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
