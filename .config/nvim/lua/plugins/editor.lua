@@ -95,5 +95,24 @@ return {
   -- Auto read files changed outside of Neovim
   {
     "djoshea/vim-autoread",
+  },
+
+  -- Embedding images
+  {
+    "HakonHarnes/img-clip.nvim",
+    event = "VeryLazy",
+    opts = {
+      default = {
+        dir_path = "images"
+      },
+      filetypes = {
+        asciidoc = {
+          template = 'image::$FILE_NAME[]',
+        },
+      }
+    },
+    keys = {
+      { "<leader>p", "<cmd>PasteImage<cr>", desc = "Paste image from system clipboard" },
+    },
   }
 }
