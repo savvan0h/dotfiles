@@ -12,6 +12,10 @@
     "context7": {
       "type": "remote",
       "url": "https://mcp.context7.com/mcp"
+    },
+    "mcp-mermaid": {
+      "type": "local",
+      "command": ["npx", "-y", "mcp-mermaid"],
     }
   }
 }
