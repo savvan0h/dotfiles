@@ -103,7 +103,8 @@ return {
     event = "VeryLazy",
     opts = {
       default = {
-        dir_path = "images"
+        dir_path = "images",
+        relative_to_current_file = true,
       },
       filetypes = {
         asciidoc = {
