@@ -108,7 +108,7 @@ return {
       },
       filetypes = {
         asciidoc = {
-          template = 'image::$FILE_NAME[]',
+          template = 'image::$FILE_NAME[align=center, scaledwidth=100%]',
         },
       }
     },
