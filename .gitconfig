@@ -36,3 +36,5 @@
 [core]
   editor = nvim
   excludesfile = ~/.gitignore
+[alias]
+  aicommit = "!f() { COMMITMSG=$(codex exec -m gpt-5.3-codex 'Generate ONLY a one-line Git commit message in English, using imperative mood, summarizing what was changed and why, based strictly on the contents of `git diff --cached`. Make sure the title has maximum 50 characters. Do not add explanation or a body. Output only the commit summary line.'); git commit -m \"$COMMITMSG\" -e; }; f"

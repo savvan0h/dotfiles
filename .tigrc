@@ -3,3 +3,5 @@ set main-view = id date author commit-title:graph=yes,refs=yes
 # Bind Settings
 bind generic <C-f> move-page-down
 bind generic <C-b> move-page-up
+
+bind status C !git aicommit
