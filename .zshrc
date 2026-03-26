@@ -33,14 +33,6 @@ setopt hist_reduce_blanks
 setopt hist_save_no_dups
 setopt share_history
 
-function peco-select-history() {
-  BUFFER=$(history -n 1 | tail -r | peco --query "$LBUFFER")
-  CURSOR=$#BUFFER
-  zle reset-prompt
-}
-zle -N peco-select-history
-bindkey '^r' peco-select-history
-
 function peco-ssh() {
   local selected_host=$(awk '
   tolower($1)=="host" {
@@ -67,3 +59,7 @@ export LANG=en_US.UTF-8
 # NVM
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh --disable-up-arrow)"
