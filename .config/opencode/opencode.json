@@ -15,7 +15,7 @@
     },
     "mcp-mermaid": {
       "type": "local",
-      "command": ["npx", "-y", "mcp-mermaid"],
+      "command": ["npx", "-y", "mcp-mermaid"]
     }
   }
 }
