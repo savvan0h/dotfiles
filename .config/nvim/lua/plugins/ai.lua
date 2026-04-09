@@ -50,7 +50,7 @@ return {
   {
     "yetone/avante.nvim",
     event = "VeryLazy",
-    version = false,
+    commit = '476f342',
     build = "make",
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
