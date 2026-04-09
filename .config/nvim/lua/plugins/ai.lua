@@ -46,40 +46,6 @@ return {
     end,
   },
 
-  -- Copilot Chat
-  {
-    "CopilotC-Nvim/CopilotChat.nvim",
-    dependencies = { "github/copilot.vim", "nvim-lua/plenary.nvim" },
-    version = "v3.12.2",
-    opts = {
-      model = "claude-sonnet-4.5",
-      agent = "copilot",
-      debug = false,
-      window = {
-        layout = "float",
-        relative = "cursor",
-        width = 0.8,
-        height = 0.4,
-        row = 1,
-      },
-      auto_insert_mode = false,
-      question_header = "👤 ",
-      answer_header = "🤖 ",
-      error_header = "❌ ",
-      prompts = {
-        Docs = {
-          prompt =
-          "/COPILOT_GENERATE Please add documentation comment for the selection. If the selection is Python code, use Google Style docstrings.",
-        },
-      },
-      mappings = {
-        complete = {
-          insert = "<C-t>",
-        },
-      },
-    },
-  },
-
   -- Avante
   {
     "yetone/avante.nvim",
