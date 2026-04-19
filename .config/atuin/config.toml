@@ -51,6 +51,7 @@ search_mode = "fulltext"
 ## possible values: "global", "host", "session", "session-preload", "directory", "workspace"
 ## consider using search.filters to customize the enablement and order of filter modes
 # filter_mode = "global"
+filter_mode = "workspace"
 
 ## With workspace filtering enabled, Atuin will filter for commands executed
 ## in any directory within a git repository tree (default: false).
@@ -59,6 +60,7 @@ search_mode = "fulltext"
 ## set filter_mode to "workspace" or leave it unspecified and
 ## set search.filters to include "workspace" before other filter modes.
 # workspaces = false
+workspaces = true
 
 ## which filter mode to use when atuin is invoked from a shell up-key binding
 ## the accepted values are identical to those of "filter_mode"
@@ -73,10 +75,12 @@ search_mode = "fulltext"
 ## which style to use
 ## possible values: auto, full, compact
 # style = "auto"
+style = "full"
 
 ## the maximum number of lines the interface should take up
 ## set it to 0 to always go full screen
 # inline_height = 0
+inline_height = 15
 
 ## the maximum number of lines the interface should take up
 ## when atuin is invoked from a shell up-key binding
@@ -85,6 +89,7 @@ search_mode = "fulltext"
 
 ## Invert the UI - put the search bar at the top , Default to `false`
 # invert = false
+invert = true
 
 ## enable or disable showing a preview of the selected command
 ## useful when the command is longer than the terminal width and is cut off
@@ -110,6 +115,7 @@ search_mode = "fulltext"
 ## Show numeric shortcuts (1..9) beside list items in the TUI
 ## set to false to hide the moving numbers if you find them distracting
 # show_numeric_shortcuts = true
+show_numeric_shortcuts = false
 
 ## default history list format - can also be specified with the --format arg
 # history_format = "{time}\t{command}\t{duration}"
@@ -232,12 +238,15 @@ enter_accept = false
 [keys]
 # Defaults to true. If disabled, using the up/down key won't exit the TUI when scrolled past the first/last entry.
 # scroll_exits = true
+scroll_exits = false
 
 # Defaults to true. The left arrow key will exit the TUI when scrolling before the first character
 # exit_past_line_start = true
+exit_past_line_start = false
 
 # Defaults to true. The right arrow key performs the same functionality as Tab and copies the selected line to the command line to be modified.
 # accept_past_line_end = true
+accept_past_line_end = false
 
 # Defaults to false. The left arrow key performs the same functionality as Tab and copies the selected line to the command line to be modified.
 # accept_past_line_start = false
@@ -287,7 +296,7 @@ records = true
 ## The port that should be used for TCP on non unix systems
 # tcp_port = 8889
 
-# [theme]
+[theme]
 ## Color theme to use for rendering in the terminal.
 ## There are some built-in themes, including the base theme ("default"),
 ## "autumn" and "marine". You can add your own themes to the "./themes" subdirectory of your
@@ -297,7 +306,7 @@ records = true
 ##    https://ogeon.github.io/docs/palette/master/palette/named/index.html
 ## If you provide a custom theme file, it should be  called "NAME.toml" and the theme below
 ## should be the stem, i.e. `theme = "NAME"` for your chosen NAME.
-# name = "autumn"
+name = "marine"
 
 ## Whether the theme manager should output normal or extra information to help fix themes.
 ## Boolean, true or false. If unset, left up to the theme manager.
@@ -308,6 +317,7 @@ records = true
 ## The "workspace" mode is skipped when not in a workspace or workspaces = false.
 ## Default filter mode can be overridden with the filter_mode setting.
 # filters = [ "global", "host", "session", "session-preload", "workspace", "directory" ]
+filters = [ "global", "session", "session-preload", "workspace", "directory" ]
 
 [tmux]
 ## Enable using atuin with tmux popup (requires tmux >= 3.2)
@@ -365,3 +375,4 @@ records = true
 ##
 ## Make directory expand instead of command:
 # columns = ["duration", "time", { type = "directory", expand = true }, { type = "command", expand = false }]
+columns = ["time", "command"]
