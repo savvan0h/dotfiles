@@ -40,4 +40,4 @@ ln -sf ~/dotfiles/.zshrc ~/.zshrc
 ln -sf ~/dotfiles/.npmrc ~/.npmrc
 ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
 ln -sf ~/dotfiles/.agents ~/.agents
-ln -sf ~/dotfiles/CLAUDE.md ~/.claude/CLAUDE.md
+ln -sf ~/dotfiles/.claude/CLAUDE.md ~/.claude/CLAUDE.md
