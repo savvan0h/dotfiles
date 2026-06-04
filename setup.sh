@@ -26,6 +26,7 @@ nvm use --lts
 mkdir -p ~/.config/nvim
 mkdir -p ~/.config/opencode
 mkdir -p ~/.config/atuin
+mkdir -p ~/.claude
 ln -sf ~/dotfiles/.config/nvim ~/.config/nvim
 ln -sf ~/dotfiles/.config/starship.toml ~/.config/starship.toml
 ln -sf ~/dotfiles/.config/opencode/skills ~/.config/opencode/skills
@@ -39,3 +40,4 @@ ln -sf ~/dotfiles/.zshrc ~/.zshrc
 ln -sf ~/dotfiles/.npmrc ~/.npmrc
 ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
 ln -sf ~/dotfiles/.agents ~/.agents
+ln -sf ~/dotfiles/CLAUDE.md ~/.claude/CLAUDE.md
