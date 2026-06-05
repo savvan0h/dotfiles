@@ -1,5 +1,22 @@
 {
   "model": "opus",
+  "permissions": {
+    "deny": [
+      "Read(.env)",
+      "Read(.env.*)",
+      "Bash(cat .env*)",
+      "Bash(rm *)",
+      "Bash(git rm *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(git tag *)",
+      "Bash(sudo *)",
+      "Bash(curl *)",
+      "Bash(wget *)",
+      "Bash(kubectl *)"
+    ]
+  },
   "hooks": {
     "PostToolUse": [
       {
