@@ -1,6 +1,7 @@
 {
   "model": "opus",
   "autoUpdatesChannel": "stable",
+  "editorMode": "vim",
   "permissions": {
     "deny": [
       "Read(.env)",
