@@ -61,6 +61,8 @@
   },
   "env": {
     "DISABLE_NON_ESSENTIAL_MODEL_CALLS": "1",
+    "DISABLE_TELEMETRY": "1",
+    "DISABLE_ERROR_REPORTING": "1"
   },
   "theme": "dark"
 }
