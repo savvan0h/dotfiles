@@ -17,7 +17,8 @@
       "Bash(curl *)",
       "Bash(wget *)",
       "Bash(kubectl *)"
-    ]
+    ],
+    "defaultMode": "plan"
   },
   "hooks": {
     "PostToolUse": [
