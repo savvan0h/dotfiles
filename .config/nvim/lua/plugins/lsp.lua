@@ -157,6 +157,14 @@ return {
           vim.fn.CocActionAsync("highlight")
         end,
       })
+
+      -- Organize Python imports on save
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        pattern = "*.py",
+        callback = function()
+          pcall(vim.fn.CocAction, "runCommand", "python.sortImports")
+        end,
+      })
     end,
   },
 }
