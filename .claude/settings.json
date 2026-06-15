@@ -13,6 +13,7 @@
       "Bash(git commit *)",
       "Bash(git push *)",
       "Bash(git tag *)",
+      "Bash(git stash *)",
       "Bash(sudo *)",
       "Bash(curl *)",
       "Bash(wget *)",
