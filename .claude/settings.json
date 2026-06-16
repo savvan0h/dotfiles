@@ -15,9 +15,11 @@
       "Bash(git tag *)",
       "Bash(git stash *)",
       "Bash(sudo *)",
-      "Bash(curl *)",
-      "Bash(wget *)",
       "Bash(kubectl *)"
+    ],
+    "ask": [
+      "Bash(curl *)",
+      "Bash(wget *)"
     ],
     "defaultMode": "plan"
   },
