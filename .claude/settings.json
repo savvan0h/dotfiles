@@ -3,6 +3,18 @@
   "autoUpdatesChannel": "stable",
   "editorMode": "vim",
   "permissions": {
+    "allow": [
+      "Bash(ruff *)",
+      "Bash(ty *)",
+      "Bash(uv run ruff *)",
+      "Bash(uv run --dev ruff *)",
+      "Bash(uv run ty *)",
+      "Bash(uv run --dev ty *)",
+      "Bash(pnpm lint)",
+      "Bash(pnpm fmt)",
+      "Bash(pnpm check)",
+      "Bash(pnpm exec tsc)"
+    ],
     "deny": [
       "Read(.env)",
       "Read(.env.*)",
