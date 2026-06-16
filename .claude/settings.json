@@ -82,5 +82,22 @@
       }
     }
   },
+  "sandbox": {
+    "enabled": true,
+    "autoAllowBashIfSandboxed": true,
+    "allowUnsandboxedCommands": false,
+    "network": {
+      "allowLocalBinding": true
+    },
+    "filesystem": {
+      "allowWrite": [
+        "~/.cache/uv"
+      ]
+    },
+    "excludedCommands": [
+      "ps *",
+      "docker *"
+    ]
+  },
   "theme": "dark"
 }
