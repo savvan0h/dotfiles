@@ -1,7 +1,6 @@
 {
   "model": "opus",
   "autoUpdatesChannel": "stable",
-  "editorMode": "vim",
   "permissions": {
     "allow": [
       "Bash(ruff *)",
