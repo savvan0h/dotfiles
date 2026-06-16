@@ -28,10 +28,7 @@
       "Bash(sudo *)",
       "Bash(kubectl *)"
     ],
-    "ask": [
-      "Bash(curl *)",
-      "Bash(wget *)"
-    ],
+    "ask": ["Bash(curl *)", "Bash(wget *)"],
     "defaultMode": "plan"
   },
   "hooks": {
@@ -102,14 +99,9 @@
       "allowLocalBinding": true
     },
     "filesystem": {
-      "allowWrite": [
-        "~/.cache/uv"
-      ]
+      "allowWrite": ["~/.cache/uv"]
     },
-    "excludedCommands": [
-      "ps *",
-      "docker *"
-    ]
+    "excludedCommands": ["ps *", "docker *"]
   },
   "theme": "dark"
 }
