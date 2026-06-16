@@ -78,7 +78,8 @@
     "security-guidance@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
     "pyright-lsp@claude-plugins-official": true,
-    "codex@openai-codex": true
+    "codex@openai-codex": true,
+    "claude-code-setup@claude-plugins-official": true
   },
   "env": {
     "DISABLE_NON_ESSENTIAL_MODEL_CALLS": "1",
