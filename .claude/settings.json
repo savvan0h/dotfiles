@@ -1,6 +1,6 @@
 {
   "model": "opus",
-  "autoUpdatesChannel": "stable",
+  "autoUpdatesChannel": "latest",
   "permissions": {
     "allow": [
       "Bash(ruff *)",
