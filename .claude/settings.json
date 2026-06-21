@@ -96,7 +96,9 @@
     "autoAllowBashIfSandboxed": true,
     "allowUnsandboxedCommands": false,
     "network": {
-      "allowLocalBinding": true
+      "allowLocalBinding": true,
+      "allowedDomains": ["github.com", "api.github.com"],
+      "allowMachLookup": ["com.apple.trustd.agent"]
     },
     "filesystem": {
       "allowWrite": ["~/.cache/uv"]
