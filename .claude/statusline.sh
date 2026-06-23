@@ -115,10 +115,17 @@ get_usage() {
   fetch_usage
 }
 
-# Convert ISO 8601 to epoch seconds (macOS compatible)
+# Detect GNU vs BSD date once (GNU date supports --version, BSD does not).
+if date --version >/dev/null 2>&1; then DATE_KIND="gnu"; else DATE_KIND="bsd"; fi
+
+# Convert ISO 8601 to epoch seconds (works with both GNU and BSD date)
 iso_to_epoch() {
-  local stripped="${1%%.*}"
-  TZ=UTC date -j -f "%Y-%m-%dT%H:%M:%S" "$stripped" +%s 2>/dev/null || echo ""
+  if [ "$DATE_KIND" = "gnu" ]; then
+    date -d "$1" +%s 2>/dev/null || echo ""        # GNU parses ISO8601 directly
+  else
+    local stripped="${1%%.*}"
+    TZ=UTC date -j -f "%Y-%m-%dT%H:%M:%S" "$stripped" +%s 2>/dev/null || echo ""
+  fi
 }
 
 # Format a reset timestamp using the given strftime format, in Asia/Tokyo
@@ -126,7 +133,11 @@ format_reset() {
   local iso_time=$1 fmt=$2 epoch
   epoch=$(iso_to_epoch "$iso_time")
   [ -z "$epoch" ] && return
-  LC_ALL=en_US.UTF-8 TZ="Asia/Tokyo" date -r "$epoch" +"$fmt" 2>/dev/null | sed 's/AM/am/;s/PM/pm/'
+  if [ "$DATE_KIND" = "gnu" ]; then
+    LC_ALL=en_US.UTF-8 TZ="Asia/Tokyo" date -d "@$epoch" +"$fmt" 2>/dev/null | sed 's/AM/am/;s/PM/pm/'
+  else
+    LC_ALL=en_US.UTF-8 TZ="Asia/Tokyo" date -r "$epoch" +"$fmt" 2>/dev/null | sed 's/AM/am/;s/PM/pm/'
+  fi
 }
 
 # Build a usage line: "<label>  <pct>%[ | Resets ...]"
