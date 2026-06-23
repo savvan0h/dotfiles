@@ -46,14 +46,17 @@ pct_to_int() {
 }
 
 # ── Line 1: Session info ──
-IFS=$'\t' read -r model used_pct lines_added lines_removed cwd < <(
+# Join with U+001F (a non-whitespace delimiter) instead of @tsv: read collapses
+# consecutive whitespace delimiters, so an empty field (e.g. used_percentage is
+# null early in a session) would otherwise shift every later field left by one.
+IFS=$'\x1f' read -r model used_pct lines_added lines_removed cwd < <(
   echo "$input" | jq -r '[
     .model.display_name // "",
     .context_window.used_percentage // "",
     .cost.total_lines_added // 0,
     .cost.total_lines_removed // 0,
     .workspace.current_dir // ""
-  ] | @tsv'
+  ] | map(tostring) | join("\u001f")'
 )
 
 ctx_int=$(pct_to_int "$used_pct")
