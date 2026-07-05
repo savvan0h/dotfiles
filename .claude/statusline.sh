@@ -162,13 +162,16 @@ usage_7d=""
 usage_json=$(get_usage 2>/dev/null || true)
 
 if [ -n "$usage_json" ]; then
-  IFS=$'\t' read -r five_util five_reset seven_util seven_reset < <(
+  # Join with U+001F (see note on line 49): an empty field (e.g. resets_at is
+  # null when utilization is 0) would otherwise collapse under @tsv/IFS=$'\t'
+  # and shift every later field left by one.
+  IFS=$'\x1f' read -r five_util five_reset seven_util seven_reset < <(
     echo "$usage_json" | jq -r '[
       .five_hour.utilization // "",
       .five_hour.resets_at // "",
       .seven_day.utilization // "",
       .seven_day.resets_at // ""
-    ] | @tsv'
+    ] | map(tostring) | join("")'
   )
 
   usage_5h=$(build_usage_line "5h" "$five_util" "$five_reset" "Resets at %-l%p")
