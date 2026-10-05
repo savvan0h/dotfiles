@@ -33,6 +33,7 @@ ln -sf ~/dotfiles/.config/opencode/skills ~/.config/opencode/skills
 ln -sf ~/dotfiles/.config/opencode/opencode.json ~/.config/opencode/opencode.json
 ln -sf ~/dotfiles/.config/opencode/opencode-cmux.json ~/.config/opencode/opencode-cmux.json
 ln -sf ~/dotfiles/.config/ghostty ~/.config/ghostty
+ln -sf ~/dotfiles/.config/cmux ~/.config/cmux
 ln -sf ~/dotfiles/.config/atuin/config.toml ~/.config/atuin/config.toml
 ln -sf ~/dotfiles/.config/uv ~/.config/uv
 ln -sf ~/dotfiles/.tigrc ~/.tigrc
