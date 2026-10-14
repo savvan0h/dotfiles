@@ -44,3 +44,4 @@ ln -sf ~/dotfiles/.agents ~/.agents
 ln -sf ~/dotfiles/.claude/CLAUDE.md ~/.claude/CLAUDE.md
 ln -sf ~/dotfiles/.claude/settings.json ~/.claude/settings.json
 ln -sf ~/dotfiles/.claude/statusline.sh ~/.claude/statusline.sh
+ln -sf ~/dotfiles/.claude/skills ~/.claude/skills
