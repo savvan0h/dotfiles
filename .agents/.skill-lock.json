@@ -15,9 +15,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/vercel-labs/agent-skills.git",
       "skillPath": "skills/react-best-practices/SKILL.md",
-      "skillFolderHash": "bd8feeee219216aac928d1d8e5c61a928dba23dc",
+      "skillFolderHash": "343db72180d05814949fef7d46be96b5c6ee86b3",
       "installedAt": "2026-03-30T14:45:57.735Z",
-      "updatedAt": "2026-03-30T14:45:57.735Z"
+      "updatedAt": "2026-10-14T05:43:16.693Z"
     },
     "yomiyasu": {
       "source": "nanaism/yomiyasu",
