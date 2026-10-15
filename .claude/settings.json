@@ -30,8 +30,8 @@
       "Bash(sudo *)",
       "Bash(kubectl *)"
     ],
-    "ask": ["Bash(curl *)", "Bash(wget *)"],
     "defaultMode": "plan"
+    "ask": ["Bash(wget *)"],
   },
   "hooks": {
     "PostToolUse": [
