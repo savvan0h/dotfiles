@@ -19,6 +19,7 @@
       "Read(.env.*)",
       "Bash(cat .env*)",
       "Bash(rm *)",
+      "Bash(rmdir *)",
       "Bash(git rm *)",
       "Bash(git add *)",
       "Bash(git commit *)",
