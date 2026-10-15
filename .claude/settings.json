@@ -1,6 +1,9 @@
 {
   "model": "opus",
   "autoUpdatesChannel": "latest",
+  "env": {
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
+  },
   "permissions": {
     "allow": [
       "Bash(ruff *)",
