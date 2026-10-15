@@ -12,7 +12,8 @@
       "Bash(pnpm lint)",
       "Bash(pnpm fmt)",
       "Bash(pnpm check)",
-      "Bash(pnpm exec tsc)"
+      "Bash(pnpm exec tsc)",
+      "Bash(git mv *)"
     ],
     "deny": [
       "Read(.env)",
