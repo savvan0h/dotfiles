@@ -72,6 +72,10 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 
 - After drafting any English document (README, spec, PR description, commit message, report, article, etc.), invoke `stop-slop` to remove AI writing patterns before finalizing.
 
+## 7. Docker
+
+In Claude Code's sandbox, run `docker` as a command on its own: chained with `&&`, `;` or a pipe, or wrapped in `cd`, it cannot reach the Docker socket.
+
 ---
 
 **These guidelines are working if:** fewer unnecessary changes in diffs, fewer rewrites due to overcomplication, and clarifying questions come before implementation rather than after mistakes.
