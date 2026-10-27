@@ -66,6 +66,12 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 
 - After drafting any Japanese document (README, spec, PR description, report, article, etc.), invoke `yomiyasu` to polish it before finalizing.
 
+## 6. English Writing
+
+**Always use the `stop-slop` skill when writing English documents.**
+
+- After drafting any English document (README, spec, PR description, commit message, report, article, etc.), invoke `stop-slop` to remove AI writing patterns before finalizing.
+
 ---
 
 **These guidelines are working if:** fewer unnecessary changes in diffs, fewer rewrites due to overcomplication, and clarifying questions come before implementation rather than after mistakes.
