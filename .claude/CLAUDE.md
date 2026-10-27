@@ -60,6 +60,12 @@ For multi-step tasks, state a brief plan:
 
 Strong success criteria let you loop independently. Weak criteria ("make it work") require constant clarification.
 
+## 5. Japanese Writing
+
+**Always use the `yomiyasu` skill when writing Japanese documents.**
+
+- After drafting any Japanese document (README, spec, PR description, report, article, etc.), invoke `yomiyasu` to polish it before finalizing.
+
 ---
 
 **These guidelines are working if:** fewer unnecessary changes in diffs, fewer rewrites due to overcomplication, and clarifying questions come before implementation rather than after mistakes.
