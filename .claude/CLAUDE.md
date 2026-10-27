@@ -76,6 +76,10 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 
 In Claude Code's sandbox, run `docker` as a command on its own: chained with `&&`, `;` or a pipe, or wrapped in `cd`, it cannot reach the Docker socket.
 
+## 8. Docs vs. Code
+
+When a repository's documentation and its existing code disagree, follow the conventions used in the existing code, and in your final reply point out each inconsistency you found between the documentation and the code.
+
 ---
 
 **These guidelines are working if:** fewer unnecessary changes in diffs, fewer rewrites due to overcomplication, and clarifying questions come before implementation rather than after mistakes.
