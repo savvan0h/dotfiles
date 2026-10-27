@@ -24,9 +24,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/nanaism/yomiyasu.git",
       "skillPath": "skills/yomiyasu/SKILL.md",
-      "skillFolderHash": "847d99a1eb742ead0270dd1b725545ad9ba2e727",
+      "skillFolderHash": "c38e31ece9ee7b17e4553708f324f07489bcfe28",
       "installedAt": "2026-10-14T04:17:03.543Z",
-      "updatedAt": "2026-10-14T04:20:41.232Z"
+      "updatedAt": "2026-10-26T05:23:43.521Z"
     },
     "stop-slop": {
       "source": "hardikpandya/stop-slop",
