@@ -21,6 +21,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 source ~/.nvm/nvm.sh
 nvm install --lts
 nvm use --lts
+npm install -g mcp-hub
 
 # Create symlinks for dotfiles
 mkdir -p ~/.config/nvim
